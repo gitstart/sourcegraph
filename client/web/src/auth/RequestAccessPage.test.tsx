@@ -1,3 +1,5 @@
+import { describe, vi, afterEach, test, expect } from 'vitest';
+
 import { act, fireEvent } from '@testing-library/react'
 import { Route, Routes } from 'react-router-dom'
 
@@ -40,9 +42,9 @@ function renderPage({
 
 describe('RequestAccessPage', () => {
     const origContext = window.context
-    afterEach(() => {
+    afterEach(() => { {
         window.context = origContext
-    })
+    } })
 
     test('renders form if all conditions are met', () => {
         const { locationRef, getByTestId, asFragment } = renderPage()

@@ -1,3 +1,5 @@
+import { describe, vi, beforeEach, afterEach, test, expect } from 'vitest';
+
 import { screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { Route, Routes } from 'react-router-dom'
@@ -21,14 +23,14 @@ import { mockCodeMonitor, mockCodeMonitorFields, mockUser } from './testing/util
 
 describe('ManageCodeMonitorPage', () => {
     const origContext = window.context
-    beforeEach(() => {
+    beforeEach(() => { {
         window.context = {
             emailEnabled: true,
         } as any
-    })
-    afterEach(() => {
+    } })
+    afterEach(() => { {
         window.context = origContext
-    })
+    } })
 
     const props = {
         authenticatedUser: mockUser,

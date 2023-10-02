@@ -1,17 +1,19 @@
+import { describe, vi, beforeAll, afterAll, test, expect } from 'vitest';
+
 import { renderWithBrandedContext } from '@sourcegraph/wildcard/src/testing'
 
 import { SiteInitPage } from './SiteInitPage'
 
 describe('SiteInitPage', () => {
     const origContext = window.context
-    beforeAll(() => {
+    beforeAll(() => { {
         window.context = {
             authProviders: [],
         } as any
-    })
-    afterAll(() => {
+    } })
+    afterAll(() => { {
         window.context = origContext
-    })
+    } })
 
     test('site already initialized', () => {
         const result = renderWithBrandedContext(

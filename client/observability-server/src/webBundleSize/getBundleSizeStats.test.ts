@@ -1,10 +1,12 @@
+import { describe, vi, it, expect } from 'vitest';
+
 import path from 'path'
 
 import { getBundleSizeStats } from './getBundleSizeStats'
 
 const MOCK_ASSETS_PATH = path.join(__dirname, './__mocks__/assets')
 
-jest.mock(
+vi.mock(
     'bundlesize.config.js',
     () => ({
         files: [
@@ -21,7 +23,7 @@ jest.mock(
     { virtual: true }
 )
 
-jest.mock(
+vi.mock(
     'webpack.manifest.json',
     () => ({
         'app.js': '/.assets/scripts/app.bundle.js',

@@ -1,3 +1,5 @@
+import { describe, vi, beforeEach, it, expect } from 'vitest';
+
 import { of } from 'rxjs'
 import { toArray } from 'rxjs/operators'
 import * as sinon from 'sinon'
@@ -7,9 +9,9 @@ import type { DiffOrBlobInfo } from './codeHost'
 import { type CodeView, toCodeViewResolver, trackCodeViews } from './codeViews'
 
 describe('codeViews', () => {
-    beforeEach(() => {
+    beforeEach(() => { {
         document.body.innerHTML = ''
-    })
+    } })
     describe('trackCodeViews()', () => {
         const fileInfo: DiffOrBlobInfo = {
             blob: {

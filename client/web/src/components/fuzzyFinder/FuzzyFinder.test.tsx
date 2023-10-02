@@ -1,3 +1,5 @@
+import { describe, vi, beforeAll, afterAll, it, expect } from 'vitest';
+
 import { MockedProvider } from '@apollo/client/testing'
 import { render, type RenderResult } from '@testing-library/react'
 import { spy } from 'sinon'
@@ -9,14 +11,14 @@ import { FuzzyWrapper, FUZZY_FILES_MOCK } from './FuzzyFinder.mocks'
 describe('FuzzyModal', () => {
     // eslint-disable-next-line @typescript-eslint/unbound-method
     const originalScrollIntoView = Element.prototype.scrollIntoView
-    beforeAll(() => {
+    beforeAll(() => { {
         // scrollIntoView is not supported in JSDOM, so we mock it for this one test
         // https://github.com/jsdom/jsdom/issues/1695
         Element.prototype.scrollIntoView = spy()
-    })
-    afterAll(() => {
+    } })
+    afterAll(() => { {
         Element.prototype.scrollIntoView = originalScrollIntoView
-    })
+    } })
 
     it('displays all, repos, symbols and files tabs with default experimentalFeatures', async () => {
         const result: RenderResult = render(

@@ -1,3 +1,5 @@
+import { describe, vi, beforeEach, it, expect } from 'vitest';
+
 import { renderHook, act } from '@testing-library/react'
 import { type Observable, type ObservableInput, of } from 'rxjs'
 import { delay, map, switchMap, tap } from 'rxjs/operators'
@@ -10,11 +12,11 @@ jest.useFakeTimers()
 describe('useParallelRequests', () => {
     let useParallelRequests: <D>(request: () => ObservableInput<D>) => FetchResult<D>
 
-    beforeEach(() => {
+    beforeEach(() => { {
         const { query } = createUseParallelRequestsHook({ maxRequests: 1 })
 
         useParallelRequests = query
-    })
+    } })
 
     describe('with single request', () => {
         it('should executes immediately without queueing', async () => {

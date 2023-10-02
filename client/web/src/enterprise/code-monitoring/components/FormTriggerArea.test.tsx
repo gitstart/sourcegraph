@@ -1,3 +1,5 @@
+import { describe, vi, beforeAll, afterAll, test, expect } from 'vitest';
+
 import { screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { act } from 'react-dom/test-utils'
@@ -10,18 +12,18 @@ import { FormTriggerArea } from './FormTriggerArea'
 describe('FormTriggerArea', () => {
     let clock: sinon.SinonFakeTimers
 
-    beforeAll(() => {
+    beforeAll(() => { {
         clock = sinon.useFakeTimers()
         Range.prototype.getClientRects = () => ({
             length: 0,
             item: () => null,
             [Symbol.iterator]: [][Symbol.iterator],
         })
-    })
+    } })
 
-    afterAll(() => {
+    afterAll(() => { {
         clock.restore()
-    })
+    } })
 
     const testCases = [
         {

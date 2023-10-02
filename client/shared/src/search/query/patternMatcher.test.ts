@@ -1,3 +1,5 @@
+import { describe, vi, it, expect } from 'vitest';
+
 // Note: This tests the pattern matcher implementation but also acts as a
 // verifier that patterns are properly typed against their input value.
 // Usage of the @ts-expect-error is intentional and should be kept in place

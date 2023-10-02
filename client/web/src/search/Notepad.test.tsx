@@ -1,3 +1,5 @@
+import { describe, vi, afterEach, it, expect, beforeEach } from 'vitest';
+
 import { act, cleanup, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { of } from 'rxjs'
@@ -93,7 +95,7 @@ describe('Notepad', () => {
     })
 
     describe('with notes', () => {
-        beforeEach(() => {
+        beforeEach(() => { {
             useNotepadState.setState({
                 entries: [
                     {
@@ -106,7 +108,7 @@ describe('Notepad', () => {
                     { id: 1, type: 'file', path: 'path/to/file', repo: 'test', revision: 'master', lineRange: null },
                 ],
             })
-        })
+        } })
 
         it('opens and closes', () => {
             renderNotepad()
@@ -173,7 +175,7 @@ describe('Notepad', () => {
     })
 
     describe('selection', () => {
-        beforeEach(() => {
+        beforeEach(() => { {
             useNotepadState.setState({
                 entries: [
                     {
@@ -200,7 +202,7 @@ describe('Notepad', () => {
                     },
                 ],
             })
-        })
+        } })
 
         it('selects an item on click or space', () => {
             renderNotepad()

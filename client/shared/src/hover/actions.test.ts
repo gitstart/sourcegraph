@@ -1,3 +1,5 @@
+import { beforeEach, vi, expect, describe, it } from 'vitest';
+
 import { from, type Observable, of } from 'rxjs'
 import { first } from 'rxjs/operators'
 import { TestScheduler } from 'rxjs/testing'
@@ -60,9 +62,9 @@ const FIXTURE_WORKSPACE: WorkspaceRootWithMetadata = { uri: 'git://r3?c3', input
 // expected test output.
 // Some tests may override this with .callsFake()
 let urlToFile!: sinon.SinonStub<Parameters<PlatformContext['urlToFile']>, string>
-beforeEach(() => {
+beforeEach(() => { {
     urlToFile = sinon.stub<Parameters<PlatformContext['urlToFile']>, string>().callsFake(toPrettyBlobURL)
-})
+} })
 
 const requestGraphQL: PlatformContext['requestGraphQL'] = <R>({ variables }: { variables: { [key: string]: any } }) =>
     // eslint-disable-next-line @typescript-eslint/consistent-type-assertions
@@ -80,7 +82,7 @@ const requestGraphQL: PlatformContext['requestGraphQL'] = <R>({ variables }: { v
 const scheduler = (): TestScheduler => new TestScheduler((actual, expected) => expect(actual).toStrictEqual(expected))
 
 describe('getHoverActionsContext', () => {
-    beforeEach(() => resetAllMemoizationCaches())
+    beforeEach(() => { resetAllMemoizationCaches() })
     it('shows a loader for the definition if slow', () => {
         scheduler().run(({ cold, expectObservable }) =>
             expectObservable(
@@ -353,7 +355,7 @@ describe('getHoverActionsContext', () => {
 })
 
 describe('getDefinitionURL', () => {
-    beforeEach(() => resetAllMemoizationCaches())
+    beforeEach(() => { resetAllMemoizationCaches() })
 
     it('emits null if the locations result is empty', () =>
         expect(

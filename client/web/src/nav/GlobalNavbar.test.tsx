@@ -1,3 +1,5 @@
+import { describe, vi, test, expect } from 'vitest';
+
 import React from 'react'
 
 import { MockedTestProvider } from '@sourcegraph/shared/src/testing/apollo'
@@ -10,8 +12,8 @@ import { renderWithBrandedContext } from '@sourcegraph/wildcard/src/testing'
 
 import { GlobalNavbar } from './GlobalNavbar'
 
-jest.mock('../search/input/SearchNavbarItem', () => ({ SearchNavbarItem: 'SearchNavbarItem' }))
-jest.mock('../components/branding/BrandLogo', () => ({ BrandLogo: 'BrandLogo' }))
+vi.mock('../search/input/SearchNavbarItem', () => ({ SearchNavbarItem: 'SearchNavbarItem' }))
+vi.mock('../components/branding/BrandLogo', () => ({ BrandLogo: 'BrandLogo' }))
 
 const PROPS: React.ComponentProps<typeof GlobalNavbar> = {
     authenticatedUser: null,

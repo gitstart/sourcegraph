@@ -1,3 +1,5 @@
+import { describe, vi, afterAll, beforeEach, test, expect } from 'vitest';
+
 import { render, cleanup, type RenderResult, fireEvent, act } from '@testing-library/react'
 import { MemoryRouter } from 'react-router-dom'
 import sinon from 'sinon'
@@ -58,9 +60,9 @@ const setup = (overrideTasks?: TourTaskType[]): RenderResult =>
 describe('Tour.tsx', () => {
     afterAll(cleanup)
 
-    beforeEach(() => {
+    beforeEach(() => { {
         mockedTelemetryService.log.resetHistory()
-    })
+    } })
 
     test('renders and triggers initial event log', () => {
         const { getByTestId } = setup()

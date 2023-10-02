@@ -1,3 +1,5 @@
+import { describe, vi, it } from 'vitest';
+
 import * as assert from 'assert'
 
 import { cStyleComment, javaStyleComment, leadingHashPattern, pythonStyleComment } from '../language-specs/comments'

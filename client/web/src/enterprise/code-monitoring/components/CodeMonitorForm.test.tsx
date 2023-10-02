@@ -1,3 +1,5 @@
+import { describe, vi, beforeEach, afterEach, test, expect } from 'vitest';
+
 import { fireEvent, getByRole, screen } from '@testing-library/react'
 import { NEVER } from 'rxjs'
 
@@ -18,14 +20,14 @@ const PROPS: CodeMonitorFormProps = {
 
 describe('CodeMonitorForm', () => {
     const origContext = window.context
-    beforeEach(() => {
+    beforeEach(() => { {
         window.context = {
             emailEnabled: true,
         } as any
-    })
-    afterEach(() => {
+    } })
+    afterEach(() => { {
         window.context = origContext
-    })
+    } })
 
     test('Uses trigger query when present', () => {
         renderWithBrandedContext(

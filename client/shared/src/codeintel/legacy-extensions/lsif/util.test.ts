@@ -1,3 +1,5 @@
+import { test, vi } from 'vitest';
+
 import sinon from 'sinon'
 
 import { createStubTextDocument } from '@sourcegraph/extension-api-stubs'

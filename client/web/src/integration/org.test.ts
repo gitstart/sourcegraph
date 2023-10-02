@@ -1,3 +1,5 @@
+import { describe, vi, beforeEach, afterEach, it } from 'vitest';
+
 import assert from 'assert'
 
 import { subtypeOf } from '@sourcegraph/common'
@@ -42,7 +44,7 @@ describe('Organizations', () => {
         })
     })
     afterEachSaveScreenshotIfFailed(() => driver.page)
-    afterEach(() => testContext?.dispose())
+    afterEach(() => { testContext?.dispose() })
 
     const settingsID = 12345
 

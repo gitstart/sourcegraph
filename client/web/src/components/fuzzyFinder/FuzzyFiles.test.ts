@@ -1,3 +1,5 @@
+import { test, vi, expect, describe } from 'vitest';
+
 import { type FuzzyFileQuery, parseFuzzyFileQuery } from './FuzzyFiles'
 
 function checkFuzzyFileQuery(query: string, expectedValue: FuzzyFileQuery): void {

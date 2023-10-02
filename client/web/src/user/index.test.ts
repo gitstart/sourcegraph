@@ -1,3 +1,5 @@
+import { describe, vi, test, expect } from 'vitest';
+
 import { VALID_USERNAME_REGEXP } from '.'
 
 describe('VALID_USERNAME_REGEX', () => {

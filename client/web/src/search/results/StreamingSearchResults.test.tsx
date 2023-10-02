@@ -1,3 +1,5 @@
+import { describe, vi, beforeEach, it, expect } from 'vitest';
+
 import React from 'react'
 
 import { cleanup, fireEvent, render, screen } from '@testing-library/react'
@@ -75,12 +77,12 @@ describe('StreamingSearchResults', () => {
         siteAdmin: true,
     } as AuthenticatedUser
 
-    beforeEach(() => {
+    beforeEach(() => { {
         useNavbarQueryState.setState({
             searchCaseSensitivity: false,
             searchQueryFromURL: 'r:golang/oauth2 test f:travis',
         })
-    })
+    } })
 
     it('should call streaming search API with the right parameters from URL', async () => {
         useNavbarQueryState.setState({ searchCaseSensitivity: true, searchPatternType: SearchPatternType.regexp })

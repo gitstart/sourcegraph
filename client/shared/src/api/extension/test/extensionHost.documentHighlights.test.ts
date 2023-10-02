@@ -1,3 +1,5 @@
+import { describe, vi, it, expect } from 'vitest';
+
 import { type ProxyMarked, proxyMarker, type Remote } from 'comlink'
 import { BehaviorSubject, type Observer } from 'rxjs'
 import type { DocumentHighlight } from 'sourcegraph'

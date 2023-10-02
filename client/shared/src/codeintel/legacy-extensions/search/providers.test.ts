@@ -1,3 +1,5 @@
+import { describe, vi, beforeEach, afterEach, it } from 'vitest';
+
 /* eslint-disable etc/no-deprecated */
 import * as assert from 'assert'
 
@@ -99,7 +101,7 @@ describe('search providers', () => {
      * (our assertions) to fast forward all time while these tests are
      * running.
      */
-    beforeEach(() => {
+    beforeEach(() => { {
         tick++
         const currentTick = tick
 
@@ -115,15 +117,15 @@ describe('search providers', () => {
 
         setTimeout(schedule, 100)
         clock = sinon.useFakeTimers()
-    })
+    } })
 
-    afterEach(() => {
+    afterEach(() => { {
         if (clock) {
             clock.restore()
         }
 
         tick++
-    })
+    } })
 
     const newAPIWithStubResolveRepo = ({
         isFork = false,

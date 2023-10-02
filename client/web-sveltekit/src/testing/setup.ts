@@ -33,27 +33,27 @@ vi.mock('svelte', async (actual: () => Promise<SvelteAPI>): Promise<SvelteAPI> =
     }
 })
 
-beforeAll(() => {
+beforeAll(() => { {
     // window.context is accessed by some existing modules
     vi.stubGlobal('context', {})
-})
+} })
 
-beforeEach(() => {
+beforeEach(() => { {
     // Set fixed date and faker seed for each tests
     const date = new Date(2021, 4, 24, 12, 0, 0)
     faker.setDefaultRefDate(date)
     faker.seed(24)
-})
+} })
 
-afterEach(() => {
+afterEach(() => { {
     faker.setDefaultRefDate()
     faker.seed()
 
     // We need to call this manually because we don't use global
     // test functions.
     cleanup()
-})
+} })
 
-afterAll(() => {
+afterAll(() => { {
     vi.unstubAllGlobals()
-})
+} })

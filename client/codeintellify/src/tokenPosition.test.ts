@@ -1,3 +1,5 @@
+import { describe, vi, afterAll, beforeAll, it, expect } from 'vitest';
+
 import * as assert from 'assert'
 
 import type { Position, Range } from '@sourcegraph/extension-api-types'
@@ -20,9 +22,9 @@ describe('token_positions', () => {
     afterAll(dom.cleanup)
 
     let testcases: CodeViewProps[] = []
-    beforeAll(() => {
+    beforeAll(() => { {
         testcases = dom.createCodeViews()
-    })
+    } })
 
     describe('covertNode()', () => {
         it('tokenizes text properly', () => {

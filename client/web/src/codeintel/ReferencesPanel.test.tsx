@@ -1,3 +1,5 @@
+import { describe, vi, it, expect } from 'vitest';
+
 import { within, fireEvent } from '@testing-library/react'
 import { createPath } from 'react-router-dom'
 
@@ -20,7 +22,7 @@ import { buildReferencePanelMocks, defaultProps } from './ReferencesPanel.mocks'
 function mockCodeMirrorBlob(props: BlobProps) {
     return <Code data-testid="codeMirrorBlobMock">{props.blobInfo.content}</Code>
 }
-jest.mock('../repo/blob/CodeMirrorBlob', () => ({ CodeMirrorBlob: mockCodeMirrorBlob }))
+vi.mock('../repo/blob/CodeMirrorBlob', () => ({ CodeMirrorBlob: mockCodeMirrorBlob }))
 
 describe('ReferencesPanel', () => {
     async function renderReferencesPanel() {

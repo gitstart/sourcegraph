@@ -1,3 +1,5 @@
+import { describe, vi, beforeEach, afterEach, it } from 'vitest';
+
 import assert from 'assert'
 
 import { addDays, subDays } from 'date-fns'
@@ -502,7 +504,7 @@ describe('Batches', () => {
         })
     })
     afterEachSaveScreenshotIfFailed(() => driver.page)
-    afterEach(() => testContext?.dispose())
+    afterEach(() => { testContext?.dispose() })
 
     const batchChangeLicenseGraphQlResults = {
         GetLicenseAndUsageInfo: () => ({

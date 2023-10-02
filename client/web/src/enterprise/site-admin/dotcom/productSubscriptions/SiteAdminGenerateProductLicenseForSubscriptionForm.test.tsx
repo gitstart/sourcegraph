@@ -1,3 +1,5 @@
+import { describe, vi, beforeEach, afterEach, test, expect } from 'vitest';
+
 import { noop } from 'lodash'
 
 import { MockedTestProvider } from '@sourcegraph/shared/src/testing/apollo'
@@ -8,12 +10,12 @@ import { mockLicenseContext, mockLicense } from './testUtils'
 
 describe('SiteAdminGenerateProductLicenseForSubscriptionForm', () => {
     const origContext = window.context
-    beforeEach(() => {
+    beforeEach(() => { {
         window.context = mockLicenseContext
-    })
-    afterEach(() => {
+    } })
+    afterEach(() => { {
         window.context = origContext
-    })
+    } })
 
     test('renders', () => {
         expect(

@@ -1,3 +1,5 @@
+import { describe, vi, beforeEach, afterEach, test, expect } from 'vitest';
+
 import expect from 'expect'
 import { test } from 'mocha'
 import { Key } from 'ts-key-enum'
@@ -137,7 +139,7 @@ describe('Search', () => {
         testContext.overrideSearchStreamEvents(mockDefaultStreamEvents)
     })
     afterEachSaveScreenshotIfFailed(() => driver.page)
-    afterEach(() => testContext?.dispose())
+    afterEach(() => { testContext?.dispose() })
 
     describe('Search filters', () => {
         test('Search filters are shown on search result pages and clicking them triggers a new search', async () => {
@@ -259,12 +261,12 @@ describe('Search', () => {
             const queryInputSelector = queryInputSelectors[name]
 
             describe(name, () => {
-                beforeEach(() => {
+                beforeEach(() => { {
                     testContext.overrideGraphQL({
                         ...commonSearchGraphQLResults,
                         ...createViewerSettingsGraphQLOverride({ user: applySettings({}) }),
                     })
-                })
+                } })
 
                 test('Is set from the URL query parameter when loading a search-related page', async () => {
                     await driver.page.goto(driver.sourcegraphBaseUrl + '/search?q=foo')
@@ -302,12 +304,12 @@ describe('Search', () => {
             const queryInputSelector = queryInputSelectors[name]
 
             describe(name, () => {
-                beforeEach(() => {
+                beforeEach(() => { {
                     testContext.overrideGraphQL({
                         ...commonSearchGraphQLResults,
                         ...createViewerSettingsGraphQLOverride({ user: applySettings() }),
                     })
-                })
+                } })
 
                 test('Clicking toggle turns on case sensitivity', async () => {
                     await driver.page.goto(driver.sourcegraphBaseUrl + '/search')
@@ -346,12 +348,12 @@ describe('Search', () => {
             const queryInputSelector = queryInputSelectors[name]
 
             describe(name, () => {
-                beforeEach(() => {
+                beforeEach(() => { {
                     testContext.overrideGraphQL({
                         ...commonSearchGraphQLResults,
                         ...createViewerSettingsGraphQLOverride({ user: applySettings() }),
                     })
-                })
+                } })
 
                 test('Clicking toggle turns on structural search', async () => {
                     await driver.page.goto(driver.sourcegraphBaseUrl + '/search')
@@ -398,12 +400,12 @@ describe('Search', () => {
     describe('Search button', () => {
         const { waitForInput, applySettings } = getSearchQueryInputConfig('codemirror6')
 
-        beforeEach(() => {
+        beforeEach(() => { {
             testContext.overrideGraphQL({
                 ...commonSearchGraphQLResults,
                 ...createViewerSettingsGraphQLOverride({ user: applySettings() }),
             })
-        })
+        } })
 
         test('Clicking search button executes search', async () => {
             await driver.page.goto(driver.sourcegraphBaseUrl + '/search?q=test&patternType=regexp')
@@ -634,12 +636,12 @@ describe('Search', () => {
             const queryInputSelector = queryInputSelectors[name]
 
             describe(name, () => {
-                beforeEach(() => {
+                beforeEach(() => { {
                     testContext.overrideGraphQL({
                         ...commonSearchGraphQLResults,
                         ...createViewerSettingsGraphQLOverride({ user: applySettings() }),
                     })
-                })
+                } })
 
                 test.skip('updates the query input and triggers suggestions', async () => {
                     await driver.page.goto(driver.sourcegraphBaseUrl + '/search?q=test')

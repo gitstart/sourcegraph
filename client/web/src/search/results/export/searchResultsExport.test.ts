@@ -1,3 +1,5 @@
+import { describe, vi, expect, test } from 'vitest';
+
 import type { SearchMatch, SearchType, SymbolMatch } from '@sourcegraph/shared/src/search/stream'
 
 import { searchResultsToFileContent, buildFileName } from './searchResultsExport'
@@ -1395,9 +1397,9 @@ describe('searchResultsToFileContent', () => {
         ],
     ]
 
-    test.each(data)('returns correct content for searchType "%s"', (searchType, results, content) => {
+    test.each(data)('returns correct content for searchType "%s"', () => new Promise((searchType, results, content) => {
         expect(searchResultsToFileContent(results, sourcegraphURL)).toEqual(content)
-    })
+    }))
 
     test('returns correct content for repo match with enableRepositoryMetadata=true', () => {
         // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
@@ -1424,7 +1426,7 @@ describe('buildFileName', () => {
         ['context:global function greeting( ', 'sourcegraph-search-export-context-global-function-greeting-.csv'],
     ]
 
-    test.each(data)('builds correct fileName from query "%s"', (query, fileName) => {
+    test.each(data)('builds correct fileName from query "%s"', () => new Promise((query, fileName) => {
         expect(buildFileName(query)).toEqual(fileName)
-    })
+    }))
 })

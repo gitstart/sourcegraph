@@ -1,3 +1,5 @@
+import { describe, vi, beforeEach, afterEach, it, expect, beforeAll } from 'vitest';
+
 import { render, type RenderResult, cleanup, fireEvent } from '@testing-library/react'
 import sinon from 'sinon'
 
@@ -8,9 +10,9 @@ describe('PageSelector', () => {
     const renderWithProps = (props: PageSelectorProps): RenderResult => render(<PageSelector {...props} />)
     const onPageChangeMock = sinon.spy()
 
-    beforeEach(() => {
+    beforeEach(() => { {
         onPageChangeMock.resetHistory()
-    })
+    } })
 
     afterEach(cleanup)
 
@@ -40,9 +42,9 @@ describe('PageSelector', () => {
 
     describe('Typical pagination', () => {
         let currentPage = 2
-        beforeEach(() => {
+        beforeEach(() => { {
             queries = renderWithProps({ currentPage, totalPages: 10, onPageChange: onPageChangeMock })
-        })
+        } })
 
         it('will render correct elipsis', () => {
             expect(queries.getByText('...', { selector: 'button' })).toBeInTheDocument()
@@ -86,9 +88,9 @@ describe('PageSelector', () => {
         })
 
         describe('when currently selected near middle', () => {
-            beforeAll(() => {
+            beforeAll(() => { {
                 currentPage = 5
-            })
+            } })
 
             it('will render correct elipsis', () => {
                 expect(queries.getAllByText('...', { selector: 'button' })).toHaveLength(2)
@@ -103,9 +105,9 @@ describe('PageSelector', () => {
         })
 
         describe('when currently selected near end', () => {
-            beforeAll(() => {
+            beforeAll(() => { {
                 currentPage = 10
-            })
+            } })
 
             it('will render correct elipsis', () => {
                 expect(queries.getByText('...', { selector: 'button' })).toBeInTheDocument()
@@ -122,9 +124,9 @@ describe('PageSelector', () => {
 
     describe('Small pagination', () => {
         const currentPage = 2
-        beforeEach(() => {
+        beforeEach(() => { {
             queries = renderWithProps({ currentPage, totalPages: 3, onPageChange: onPageChangeMock })
-        })
+        } })
 
         it('will render no elipsis', () => {
             expect(queries.queryByText('...', { selector: 'button' })).not.toBeInTheDocument()
@@ -147,9 +149,9 @@ describe('PageSelector', () => {
 
     describe('Large pagination', () => {
         const currentPage = 1
-        beforeEach(() => {
+        beforeEach(() => { {
             queries = renderWithProps({ currentPage, totalPages: 30, onPageChange: onPageChangeMock })
-        })
+        } })
 
         it('will render correct elipsis', () => {
             expect(queries.getByText('...', { selector: 'button' })).toBeInTheDocument()

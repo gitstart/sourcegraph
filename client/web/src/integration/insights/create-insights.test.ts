@@ -1,3 +1,5 @@
+import { describe, vi, beforeEach, afterEach, it } from 'vitest';
+
 import assert from 'assert'
 
 import delay from 'delay'
@@ -30,7 +32,7 @@ describe('Code insight create insight page', () => {
     })
 
     after(() => driver?.close())
-    afterEach(() => testContext?.dispose())
+    afterEach(() => { testContext?.dispose() })
     afterEachSaveScreenshotIfFailed(() => driver.page)
 
     it('is styled correctly, with welcome popup', async () => {

@@ -1,3 +1,5 @@
+import { describe, vi, beforeEach, it, expect } from 'vitest';
+
 import { startCase } from 'lodash'
 import type { Omit } from 'utility-types'
 
@@ -130,10 +132,10 @@ describe('GitHub DOM functions', () => {
                 ]
                 for (const { view, url } of views) {
                     describe(`${startCase(view)} page`, () => {
-                        beforeEach(() => {
+                        beforeEach(() => { {
                             // TODO ideally DOM functions would not look at global state like the URL.
                             jsdom.reconfigure({ url })
-                        })
+                        } })
                         for (const extension of ['vanilla', 'refined-github']) {
                             describe(startCase(extension), () => {
                                 if (view === 'pull-request-discussion') {

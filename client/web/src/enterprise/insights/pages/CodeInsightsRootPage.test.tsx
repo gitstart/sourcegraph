@@ -1,3 +1,5 @@
+import { describe, vi, beforeAll, it, expect } from 'vitest';
+
 /* eslint-disable ban/ban */
 import type { ReactElement } from 'react'
 
@@ -19,14 +21,14 @@ import { CodeInsightsRootPage, CodeInsightsRootPageTab } from './CodeInsightsRoo
 
 function mockRouterDom() {
     return {
-        ...jest.requireActual('react-router-dom'),
+        ...await vi.importActual('react-router-dom'),
         useNavigate: () => ({
             push: jest.fn(),
         }),
     }
 }
 
-jest.mock('react-router-dom', () => mockRouterDom())
+vi.mock('react-router-dom', () => mockRouterDom())
 
 const mockTelemetryService = {
     log: sinon.spy(),
@@ -96,9 +98,9 @@ const renderWithBrandedContext = (component: ReactElement, { route = '/', path =
 })
 
 describe('CodeInsightsRootPage', () => {
-    beforeAll(() => {
+    beforeAll(() => { {
         window.IntersectionObserver = MockIntersectionObserver
-    })
+    } })
 
     it('should render dashboard not found page when id is not found', () => {
         renderWithBrandedContext(

@@ -1,3 +1,5 @@
+import { describe, vi, it, expect } from 'vitest';
+
 import { of } from 'rxjs'
 
 import { SymbolKind } from '../../graphql-operations'

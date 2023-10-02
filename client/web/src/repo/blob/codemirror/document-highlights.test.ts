@@ -1,3 +1,5 @@
+import { describe, vi, it, expect } from 'vitest';
+
 import { RangeSet, Text } from '@codemirror/state'
 import { Decoration } from '@codemirror/view'
 

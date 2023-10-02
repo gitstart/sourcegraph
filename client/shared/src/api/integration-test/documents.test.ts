@@ -1,3 +1,5 @@
+import { describe, vi, test, expect } from 'vitest';
+
 import type { TextDocument } from '../../codeintel/legacy-extensions/api'
 import { assertToJSON, collectSubscribableValues, integrationTestContext } from '../../testing/testHelpers'
 

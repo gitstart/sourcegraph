@@ -1,3 +1,5 @@
+import { describe, vi, afterEach, beforeEach, it, expect } from 'vitest';
+
 import { render, type RenderResult, cleanup, fireEvent } from '@testing-library/react'
 
 import { Tab, TabList, TabPanel, TabPanels, Tabs, type TabsProps } from './Tabs'
@@ -38,9 +40,9 @@ describe('Tabs', () => {
     afterEach(cleanup)
 
     describe('Main component structure', () => {
-        beforeEach(() => {
+        beforeEach(() => { {
             queries = renderWithProps({ children: <TabsChildren />, lazy: false, size: 'medium' })
-        })
+        } })
 
         it('will render tabs children correctly', () => {
             expect(queries.getByTestId('wildcard-tabs')).toBeInTheDocument()
@@ -70,14 +72,14 @@ describe('Tabs', () => {
     })
 
     describe('with actions', () => {
-        beforeEach(() => {
+        beforeEach(() => { {
             queries = renderWithProps({
                 children: <TabsChildrenWithActions />,
                 lazy: true,
                 behavior: 'forceRender',
                 size: 'medium',
             })
-        })
+        } })
 
         it('will render actions prop as a component', () => {
             expect(queries.getByText('Actions')).toBeInTheDocument()
@@ -86,14 +88,14 @@ describe('Tabs', () => {
 
     describe('Lazy = true', () => {
         describe('Tabs with behavior = forceRender', () => {
-            beforeEach(() => {
+            beforeEach(() => { {
                 queries = renderWithProps({
                     children: <TabsChildren />,
                     lazy: true,
                     behavior: 'forceRender',
                     size: 'medium',
                 })
-            })
+            } })
 
             it('will render <TabPanel/> children each time associated <Tab>  is clicked', () => {
                 fireEvent.click(queries.getAllByTestId('wildcard-tab')[0])
@@ -106,14 +108,14 @@ describe('Tabs', () => {
         })
 
         describe('Tabs with behavior = memoize', () => {
-            beforeEach(() => {
+            beforeEach(() => { {
                 queries = renderWithProps({
                     children: <TabsChildren />,
                     lazy: true,
                     behavior: 'memoize',
                     size: 'medium',
                 })
-            })
+            } })
 
             it('will render and keep mounted <TabPanel/> children when <Tab> is clicked', () => {
                 fireEvent.click(queries.getAllByTestId('wildcard-tab')[0])
@@ -136,9 +138,9 @@ describe('Tabs', () => {
     })
 
     describe('Lazy = false', () => {
-        beforeEach(() => {
+        beforeEach(() => { {
             queries = renderWithProps({ children: <TabsChildren />, lazy: false, size: 'medium' })
-        })
+        } })
 
         it('will render all <TabPanel/> children', () => {
             fireEvent.click(queries.getAllByTestId('wildcard-tab')[0])

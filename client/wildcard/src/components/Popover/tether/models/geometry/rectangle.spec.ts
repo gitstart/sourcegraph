@@ -1,3 +1,5 @@
+import { describe, vi, expect } from 'vitest';
+
 import { createRectangle, getIntersection } from './rectangle'
 
 describe('rectangle should calculate intersection', () => {
@@ -7,7 +9,7 @@ describe('rectangle should calculate intersection', () => {
         [createRectangle(0, 0, 200, 200), createRectangle(210, 210, 600, 600), createRectangle(0, 0, 0, 0)],
     ]
 
-    test.each(intersectionCases)('with %s and %s rectangles', (a, b, expected) => {
+    test.each(intersectionCases)('with %s and %s rectangles', () => new Promise((a, b, expected) => {
         expect(getIntersection(a, b)).toStrictEqual(expected)
-    })
+    }))
 })

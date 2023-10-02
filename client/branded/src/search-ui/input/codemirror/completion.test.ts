@@ -1,3 +1,5 @@
+import { describe, vi, test, expect } from 'vitest';
+
 import type { Completion } from '@codemirror/autocomplete'
 
 import { SymbolKind } from '@sourcegraph/shared/src/graphql-operations'

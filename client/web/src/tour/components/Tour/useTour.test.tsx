@@ -1,3 +1,5 @@
+import { describe, vi, afterAll, beforeEach, test, expect } from 'vitest';
+
 import { renderHook, cleanup, act } from '@testing-library/react'
 import type { WrapperComponent } from '@testing-library/react-hooks'
 
@@ -28,9 +30,9 @@ const setup = (settings: TemporarySettings['onboarding.quickStartTour'] = {}) =>
 describe('useTour.ts', () => {
     afterAll(cleanup)
 
-    beforeEach(() => {
+    beforeEach(() => { {
         localStorage.clear()
-    })
+    } })
 
     test('returns initial state from temporary settings', () => {
         const initialState: TourState = { completedStepIds: [], status: 'closed' }

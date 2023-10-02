@@ -1,3 +1,5 @@
+import { describe, vi, beforeEach, it } from 'vitest';
+
 import assert from 'assert'
 
 import { createDriverForTest, type Driver } from '@sourcegraph/shared/src/testing/driver'

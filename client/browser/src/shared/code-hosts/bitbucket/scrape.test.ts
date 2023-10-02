@@ -1,3 +1,5 @@
+import { describe, vi, afterEach, it, expect } from 'vitest';
+
 import { readFile } from 'mz/fs'
 
 import { getFixtureBody } from '../shared/codeHostTestUtils'
@@ -11,9 +13,9 @@ import {
 
 describe('Bitbucket scrape.ts', () => {
     describe('getFileInfoFromSingleFileSourceCodeView()', () => {
-        afterEach(() => {
+        afterEach(() => { {
             document.body.innerHTML = ''
-        })
+        } })
         it('should get the FileInfo for a single file code view', async () => {
             jsdom.reconfigure({
                 url: 'https://bitbucket.test/projects/SOUR/repos/mux/browse/context.go',

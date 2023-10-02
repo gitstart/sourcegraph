@@ -1,3 +1,5 @@
+import { describe, vi, it, expect } from 'vitest';
+
 import { type ProxyMarked, proxyMarker, type Remote } from 'comlink'
 import { type Observer, of } from 'rxjs'
 import type { Hover } from 'sourcegraph'

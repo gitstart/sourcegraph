@@ -1,3 +1,5 @@
+import { describe, vi, beforeEach, test, expect } from 'vitest';
+
 import { render, type RenderResult } from '@testing-library/react'
 
 import { NOOP_TELEMETRY_SERVICE } from '@sourcegraph/shared/src/telemetry/telemetryService'
@@ -7,7 +9,7 @@ import { ProductResearchPage } from './ProductResearch'
 describe('ProductResearchPage', () => {
     let queries: RenderResult
 
-    beforeEach(() => {
+    beforeEach(() => { {
         queries = render(
             <ProductResearchPage
                 isCodyApp={false}
@@ -17,7 +19,7 @@ describe('ProductResearchPage', () => {
                 }}
             />
         )
-    })
+    } })
 
     test('Renders page correctly', () => {
         expect(queries.getByText('Product research and feedback')).toBeVisible()

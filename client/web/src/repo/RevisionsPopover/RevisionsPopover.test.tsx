@@ -1,3 +1,5 @@
+import { describe, vi, afterEach, beforeEach, it, expect } from 'vitest';
+
 import { cleanup, within, fireEvent, act } from '@testing-library/react'
 
 import { MockedTestProvider, waitForNextApolloResponse } from '@sourcegraph/shared/src/testing/apollo'
@@ -29,14 +31,14 @@ describe('RevisionsPopover', () => {
     describe('Branches', () => {
         let branchesTab: HTMLElement
 
-        beforeEach(async () => {
+        beforeEach(() => { {
             renderResult = renderPopover()
 
             fireEvent.click(renderResult.getByText('Branches'))
             await waitForNextApolloResponse()
 
             branchesTab = renderResult.getByRole('tabpanel', { name: 'Branches' })
-        })
+        } })
 
         it('renders correct number of results', () => {
             expect(within(branchesTab).getAllByRole('link')).toHaveLength(50)
@@ -86,7 +88,7 @@ describe('RevisionsPopover', () => {
         })
 
         describe('Speculative results', () => {
-            beforeEach(async () => {
+            beforeEach(() => { {
                 cleanup()
                 renderResult = renderPopover({ showSpeculativeResults: true })
 
@@ -94,7 +96,7 @@ describe('RevisionsPopover', () => {
                 await waitForNextApolloResponse()
 
                 branchesTab = renderResult.getByRole('tabpanel', { name: 'Branches' })
-            })
+            } })
 
             it('displays results correctly by displaying a single speculative result', async () => {
                 const searchInput = within(branchesTab).getByRole('searchbox')
@@ -117,14 +119,14 @@ describe('RevisionsPopover', () => {
     describe('Tags', () => {
         let tagsTab: HTMLElement
 
-        beforeEach(async () => {
+        beforeEach(() => { {
             renderResult = renderPopover()
 
             fireEvent.click(renderResult.getByText('Tags'))
             await waitForNextApolloResponse()
 
             tagsTab = renderResult.getByRole('tabpanel', { name: 'Tags' })
-        })
+        } })
 
         it('renders correct number of results', () => {
             expect(within(tagsTab).getAllByRole('link')).toHaveLength(50)
@@ -162,14 +164,14 @@ describe('RevisionsPopover', () => {
     describe('Commits', () => {
         let commitsTab: HTMLElement
 
-        beforeEach(async () => {
+        beforeEach(() => { {
             renderResult = renderPopover()
 
             fireEvent.click(renderResult.getByText('Commits'))
             await waitForNextApolloResponse()
 
             commitsTab = renderResult.getByRole('tabpanel', { name: 'Commits' })
-        })
+        } })
 
         it('renders correct number of results', () => {
             expect(within(commitsTab).getAllByRole('link')).toHaveLength(15)
@@ -201,7 +203,7 @@ describe('RevisionsPopover', () => {
         })
 
         describe('Against a speculative revision', () => {
-            beforeEach(async () => {
+            beforeEach(() => { {
                 cleanup()
                 renderResult = renderPopover({ currentRev: 'non-existent-revision' })
 
@@ -209,7 +211,7 @@ describe('RevisionsPopover', () => {
                 await waitForNextApolloResponse()
 
                 commitsTab = renderResult.getByRole('tabpanel', { name: 'Commits' })
-            })
+            } })
 
             it('renders 0 results', () => {
                 expect(within(commitsTab).queryByRole('link')).not.toBeInTheDocument()

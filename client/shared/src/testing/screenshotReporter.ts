@@ -1,3 +1,5 @@
+import { afterEach, vi } from 'vitest';
+
 import * as path from 'path'
 
 import { afterEach } from 'mocha'

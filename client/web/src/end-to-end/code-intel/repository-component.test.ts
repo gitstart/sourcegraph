@@ -1,3 +1,5 @@
+import { describe, vi, beforeEach, test, expect } from 'vitest';
+
 import expect from 'expect'
 import { sortBy } from 'lodash'
 import { describe, test, before, beforeEach, after } from 'mocha'
@@ -38,7 +40,7 @@ describe('Repository component', () => {
     afterEachSaveScreenshotIfFailed(() => driver.page)
     afterEachRecordCoverage(() => driver)
 
-    beforeEach(async () => {
+    beforeEach(() => { {
         if (driver) {
             // Clear local storage to reset sidebar selection (files or tabs) for each test
             await driver.page.evaluate(() => {
@@ -47,7 +49,7 @@ describe('Repository component', () => {
 
             await driver.resetUserSettings()
         }
-    })
+    } })
 
     // Used to avoid the "Node is either not visible or not an HTMLElement" error when using Puppeteer .click() method.
     // This usually happens if clicking on a link inside a popover or modal.

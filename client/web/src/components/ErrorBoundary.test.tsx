@@ -1,11 +1,17 @@
+import { describe, vi, test, expect } from 'vitest';
+
 import React from 'react'
 
 import { renderWithBrandedContext } from '@sourcegraph/wildcard/src/testing'
 
 import { ErrorBoundary } from './ErrorBoundary'
 
-jest.mock('mdi-react/AlertCircleIcon', () => 'AlertCircleIcon')
-jest.mock('mdi-react/ReloadIcon', () => 'ReloadIcon')
+vi.mock('mdi-react/AlertCircleIcon', () => ({ 
+        default: 'AlertCircleIcon' 
+      }))
+vi.mock('mdi-react/ReloadIcon', () => ({ 
+        default: 'ReloadIcon' 
+      }))
 
 const ThrowError: React.FunctionComponent<React.PropsWithChildren<unknown>> = () => {
     throw new Error('x')

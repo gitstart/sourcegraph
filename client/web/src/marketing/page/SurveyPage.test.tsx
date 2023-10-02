@@ -1,3 +1,5 @@
+import { describe, vi, afterEach, beforeEach, it, expect } from 'vitest';
+
 import type { MockedProviderProps } from '@apollo/client/testing'
 import { cleanup, fireEvent, within, waitFor } from '@testing-library/react'
 
@@ -38,9 +40,9 @@ describe('SurveyPage', () => {
         )
 
     describe('Prior to submission', () => {
-        beforeEach(() => {
+        beforeEach(() => { {
             renderResult = renderSurveyPage({ mocks: [submitSurveyMock] })
-        })
+        } })
 
         it('renders and handles form fields correctly', async () => {
             const recommendRadioGroup = renderResult.getByLabelText(
@@ -65,12 +67,12 @@ describe('SurveyPage', () => {
     })
 
     describe('After submission', () => {
-        beforeEach(() => {
+        beforeEach(() => { {
             renderResult = renderSurveyPage({
                 mocks: [],
                 routerProps: { matchParam: 'thanks', locationState: { score: 10, feedback: 'great' } },
             })
-        })
+        } })
 
         it('renders correct thank you message', () => {
             expect(renderResult.getByText('Thanks for the feedback!')).toBeVisible()

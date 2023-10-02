@@ -1,3 +1,5 @@
+import { describe, vi, beforeEach, afterEach, it } from 'vitest';
+
 import { BehaviorSubject } from 'rxjs'
 import sinon from 'sinon'
 
@@ -16,13 +18,13 @@ const noopMain = pretendRemote<ClientAPI>({
 
 describe('Extension logging', () => {
     let spy: sinon.SinonSpy
-    beforeEach(() => {
+    beforeEach(() => { {
         spy = sinon.spy(console, 'log')
-    })
+    } })
 
-    afterEach(() => {
+    afterEach(() => { {
         spy.restore()
-    })
+    } })
 
     it('does not log when extension ID is absent from settings', () => {
         const extensionID = 'test/extension'

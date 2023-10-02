@@ -1,3 +1,5 @@
+import { expect, vi, describe, test, it } from 'vitest';
+
 import { isExternalLink } from '@sourcegraph/common'
 
 import { SearchPatternType } from '../graphql-operations'

@@ -1,3 +1,5 @@
+import { describe, vi, beforeEach, afterEach, it, expect } from 'vitest';
+
 import { cleanup, fireEvent, act } from '@testing-library/react'
 
 import { NOOP_TELEMETRY_SERVICE } from '@sourcegraph/shared/src/telemetry/telemetryService'
@@ -22,7 +24,7 @@ describe('RevisionsPopover', () => {
 
     const waitForInputDebounce = () => act(() => new Promise(resolve => setTimeout(resolve, 200)))
 
-    beforeEach(async () => {
+    beforeEach(() => { {
         renderResult = renderWithBrandedContext(
             <MockedTestProvider mocks={MOCK_REQUESTS}>
                 <RepositoriesPopover currentRepo={repo.id} telemetryService={NOOP_TELEMETRY_SERVICE} />
@@ -31,7 +33,7 @@ describe('RevisionsPopover', () => {
         )
 
         await waitForNextApolloResponse()
-    })
+    } })
 
     afterEach(cleanup)
 

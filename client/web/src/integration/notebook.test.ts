@@ -1,3 +1,5 @@
+import { describe, vi, beforeEach, afterEach, it, expect } from 'vitest';
+
 import fs from 'fs'
 import path from 'path'
 
@@ -217,7 +219,7 @@ describe('Search Notebook', () => {
         })
     })
     afterEachSaveScreenshotIfFailed(() => driver.page)
-    afterEach(() => testContext?.dispose())
+    afterEach(() => { testContext?.dispose() })
 
     const getBlockIds = () =>
         driver.page.evaluate(() => {
@@ -467,14 +469,14 @@ describe('Search Notebook', () => {
         await driver.page.click('[data-testid="share-notebook-done-button"]')
     })
 
-    afterEach(() => {
+    afterEach(() => { {
         const exportedNotebookPath = path.resolve(downloadPath, 'Exported.snb.md')
         // eslint-disable-next-line no-sync
         if (fs.existsSync(exportedNotebookPath)) {
             // eslint-disable-next-line no-sync
             fs.unlinkSync(exportedNotebookPath)
         }
-    })
+    } })
 
     it('Should export a notebook as Markdown file and import it back', async () => {
         testContext.overrideGraphQL({

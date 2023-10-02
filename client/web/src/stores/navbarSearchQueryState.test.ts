@@ -1,3 +1,5 @@
+import { describe, vi, it, expect } from 'vitest';
+
 import { SearchPatternType } from '@sourcegraph/shared/src/graphql-operations'
 
 import { parseSearchURL } from '../search'

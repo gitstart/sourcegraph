@@ -1,3 +1,5 @@
+import { describe, vi, afterEach, it, expect } from 'vitest';
+
 import { act, renderHook } from '@testing-library/react'
 import { times } from 'lodash'
 
@@ -18,9 +20,9 @@ function scrollToViewMoreResults(scrollNumber: number, handleBottomHit: () => vo
 }
 
 describe('useItemsToShow', () => {
-    afterEach(() => {
+    afterEach(() => { {
         sessionStorage.clear()
-    })
+    } })
 
     it('returns expected default values', () => {
         const { result } = renderUseItemsToShowHook()

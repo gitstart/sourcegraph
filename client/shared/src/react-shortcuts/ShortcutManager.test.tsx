@@ -1,3 +1,5 @@
+import { describe, vi, beforeAll, afterAll, it, expect } from 'vitest';
+
 import { createEvent, fireEvent, render } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import * as sinon from 'sinon'
@@ -13,7 +15,7 @@ describe('ShortcutManager', () => {
     // eslint-disable-next-line @typescript-eslint/unbound-method
     const originalGetModifierState = KeyboardEvent.prototype.getModifierState
 
-    beforeAll(() => {
+    beforeAll(() => { {
         jest.useFakeTimers()
         // jsdom doesn't implement getModifierState properly:
         // https://github.com/jsdom/jsdom/issues/3126
@@ -30,12 +32,12 @@ describe('ShortcutManager', () => {
             }
             return false
         }
-    })
+    } })
 
-    afterAll(() => {
+    afterAll(() => { {
         jest.useRealTimers()
         KeyboardEvent.prototype.getModifierState = originalGetModifierState
-    })
+    } })
 
     it('calls the matching shortcut immediately if there are no other similar shortcuts', () => {
         const fooSpy = sinon.spy()

@@ -1,3 +1,5 @@
+import { describe, vi, it, expect } from 'vitest';
+
 import { mdiClose } from '@mdi/js'
 import { render } from '@testing-library/react'
 import CloseIcon from 'mdi-react/CloseIcon'

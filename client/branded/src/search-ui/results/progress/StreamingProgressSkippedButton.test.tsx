@@ -1,3 +1,5 @@
+import { describe, vi, beforeAll, it, expect } from 'vitest';
+
 import { screen, waitFor } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import sinon from 'sinon'
@@ -9,7 +11,7 @@ import { renderWithBrandedContext } from '@sourcegraph/wildcard/src/testing'
 import { StreamingProgressSkippedButton } from './StreamingProgressSkippedButton'
 
 describe('StreamingProgressSkippedButton', () => {
-    beforeAll(() => {
+    beforeAll(() => { {
         ;(global as any).document.createRange = () => ({
             setStart: () => {},
             setEnd: () => {},
@@ -18,7 +20,7 @@ describe('StreamingProgressSkippedButton', () => {
                 ownerDocument: document,
             },
         })
-    })
+    } })
 
     it('should be in info state with only info items', () => {
         const progress: Progress = {

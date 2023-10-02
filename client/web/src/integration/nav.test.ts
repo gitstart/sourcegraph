@@ -1,3 +1,5 @@
+import { describe, vi, beforeEach, afterEach, test, expect } from 'vitest';
+
 import { subDays } from 'date-fns'
 import expect from 'expect'
 import { test } from 'mocha'
@@ -90,7 +92,7 @@ describe('GlobalNavbar', () => {
     })
 
     afterEachSaveScreenshotIfFailed(() => driver.page)
-    afterEach(() => testContext?.dispose())
+    afterEach(() => { testContext?.dispose() })
 
     describe('repo file page', () => {
         // This test covers the case that the query state shouldn't be updated

@@ -1,3 +1,5 @@
+import { test, vi, expect, describe } from 'vitest';
+
 import { CaseInsensitiveFuzzySearch } from './CaseInsensitiveFuzzySearch'
 
 function fuzzyMatches(query: string, values: string[]): string[] {

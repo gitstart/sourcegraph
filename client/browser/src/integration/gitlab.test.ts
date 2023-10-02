@@ -1,3 +1,5 @@
+import { describe, vi, beforeEach, afterEach, it } from 'vitest';
+
 import assert from 'assert'
 
 import type { Settings } from '@sourcegraph/shared/src/settings/settings'
@@ -97,7 +99,7 @@ describe('GitLab', () => {
         await driver.page.emulateMediaFeatures([{ name: 'prefers-color-scheme', value: 'light' }])
     })
     afterEachSaveScreenshotIfFailed(() => driver.page)
-    afterEach(() => testContext?.dispose())
+    afterEach(() => { testContext?.dispose() })
 
     it('adds "view on Sourcegraph" buttons to files', async () => {
         if (readEnvironmentString({ variable: 'POLLYJS_MODE', defaultValue: 'replay' }) === 'replay') {

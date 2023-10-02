@@ -1,3 +1,5 @@
+import { describe, vi, it, expect } from 'vitest';
+
 import { render } from '@testing-library/react'
 
 import { H4 } from '../Typography'
@@ -19,7 +21,7 @@ describe('Alert', () => {
         `)
     })
 
-    it.each(ALERT_VARIANTS)("renders variant '%s' correctly", variant => {
+    it.each(ALERT_VARIANTS)("renders variant '%s' correctly", () => new Promise(variant => {
         const { container } = render(
             <Alert variant={variant}>
                 <H4>Too many matching repositories</H4>
@@ -27,7 +29,7 @@ describe('Alert', () => {
             </Alert>
         )
         expect(container.firstChild).toMatchSnapshot()
-    })
+    }))
 
     it('renders Alert content correctly', () => {
         const { container } = render(<Alert>Too many matching repositories</Alert>)

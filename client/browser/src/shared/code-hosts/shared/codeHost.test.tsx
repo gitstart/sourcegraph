@@ -1,3 +1,5 @@
+import { expect, vi, describe, beforeAll, beforeEach, it, afterEach, test } from 'vitest';
+
 import { nextTick } from 'process'
 import { promisify } from 'util'
 
@@ -52,7 +54,7 @@ const createTestElement = (): HTMLElement => {
     return element
 }
 
-jest.mock('uuid', () => ({
+vi.mock('uuid', () => ({
     v4: () => 'uuid',
 }))
 
@@ -103,13 +105,13 @@ const tick = promisify(nextTick)
 describe('codeHost', () => {
     // Mock the global IntersectionObserver constructor with an implementation that
     // will immediately signal all observed elements as intersecting.
-    beforeAll(() => {
+    beforeAll(() => { {
         window.IntersectionObserver = MockIntersectionObserver
-    })
+    } })
 
-    beforeEach(() => {
+    beforeEach(() => { {
         document.body.innerHTML = ''
-    })
+    } })
 
     describe('createOverlayMount()', () => {
         it('should create the overlay mount', () => {
@@ -123,12 +125,12 @@ describe('codeHost', () => {
     describe('handleCodeHost()', () => {
         let subscriptions = new Subscription()
 
-        afterEach(() => {
+        afterEach(() => { {
             RENDER.resetHistory()
             resetAllMemoizationCaches()
             subscriptions.unsubscribe()
             subscriptions = new Subscription()
-        })
+        } })
 
         test('renders the hover overlay mount', async () => {
             const { extensionHostAPI } = await integrationTestContext()

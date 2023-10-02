@@ -1,3 +1,5 @@
+import { describe, vi, beforeEach, afterEach, test, expect } from 'vitest';
+
 import { cleanup, fireEvent, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import sinon from 'sinon'
@@ -17,7 +19,7 @@ const sampleFeedback = {
 describe('FeedbackPrompt', () => {
     const onSubmit = sinon.stub()
 
-    beforeEach(() => {
+    beforeEach(() => { {
         renderWithBrandedContext(
             <FeedbackPrompt
                 openByDefault={true}
@@ -30,12 +32,12 @@ describe('FeedbackPrompt', () => {
                 </PopoverTrigger>
             </FeedbackPrompt>
         )
-    })
+    } })
 
-    afterEach(() => {
+    afterEach(() => { {
         cleanup()
         onSubmit.resetHistory()
-    })
+    } })
 
     const submitFeedback = () => {
         fireEvent.change(screen.getByLabelText('Send feedback to Sourcegraph'), {

@@ -1,3 +1,5 @@
+import { describe, vi, beforeEach, test, expect } from 'vitest';
+
 import * as dom from './highlightNode'
 
 describe('util/dom', () => {
@@ -9,11 +11,11 @@ describe('util/dom', () => {
         let cell: HTMLTableCellElement
         let cellWithEmoji: HTMLTableCellElement
 
-        beforeEach(() => {
+        beforeEach(() => { {
             document.body.innerHTML = `<table><tbody><td id="cell">${cellInnerHTML}</td><td id="cellWithEmoji">${cellWithEmojiInnerHTML}</td></tbody></table>`
             cell = window.document.querySelector<HTMLTableCellElement>('#cell')!
             cellWithEmoji = window.document.querySelector<HTMLTableCellElement>('#cellWithEmoji')!
-        })
+        } })
 
         test('highlights no characters', () => {
             dom.highlightNode(cell, 0, 0)

@@ -1,3 +1,5 @@
+import { describe, vi, beforeEach, afterEach, test, expect } from 'vitest';
+
 import { screen, waitFor } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { Route, Routes } from 'react-router-dom'
@@ -36,15 +38,15 @@ describe('CreateCodeMonitorPage', () => {
     }
 
     const origContext = window.context
-    beforeEach(() => {
+    beforeEach(() => { {
         window.context = {
             emailEnabled: true,
         } as any
-    })
-    afterEach(() => {
+    } })
+    afterEach(() => { {
         window.context = origContext
         props.createCodeMonitor.resetHistory()
-    })
+    } })
 
     test('createCodeMonitor is called on submit', async () => {
         const search = new URLSearchParams({

@@ -1,3 +1,5 @@
+import { describe, vi, afterEach, beforeEach, it, expect } from 'vitest';
+
 import { render, type RenderResult, cleanup, waitFor, act, fireEvent } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { wait } from '@testing-library/user-event/dist/utils'
@@ -30,9 +32,9 @@ describe('Tooltip', () => {
 
     afterEach(cleanup)
 
-    beforeEach(() => {
+    beforeEach(() => { {
         rendered = render(<TooltipTest />)
-    })
+    } })
 
     it('displays content when the trigger is hovered', async () => {
         userEvent.hover(rendered.getByTestId('trigger-1'))

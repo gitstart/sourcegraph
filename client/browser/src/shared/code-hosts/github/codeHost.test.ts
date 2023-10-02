@@ -1,3 +1,5 @@
+import { describe, vi, beforeAll, it, expect, afterAll, beforeEach, test } from 'vitest';
+
 import { existsSync, readdirSync } from 'fs'
 
 import fetch from 'jest-fetch-mock'
@@ -83,11 +85,11 @@ describe('github/codeHost', () => {
         const sourcegraphURL = 'https://sourcegraph.my.org'
 
         describe('on blob page', () => {
-            beforeAll(() => {
+            beforeAll(() => { {
                 jsdom.reconfigure({
                     url: 'https://github.com/sourcegraph/sourcegraph/blob/main/browser/src/shared/code-hosts/code_intelligence.tsx',
                 })
-            })
+            } })
             it('returns an URL to the Sourcegraph instance if the location has a viewState', () => {
                 expect(
                     urlToFile(
@@ -152,13 +154,13 @@ describe('github/codeHost', () => {
             })
         })
         describe('on pull request page', () => {
-            beforeAll(async () => {
+            beforeAll(() => { {
                 jsdom.reconfigure({ url: 'https://github.com/sourcegraph/sourcegraph/pull/3257/files' })
                 document.documentElement.innerHTML = await readFile(
                     __dirname + '/__fixtures__/github.com/pull-request/vanilla/unified/page.html',
                     'utf-8'
                 )
-            })
+            } })
             it('returns a URL to the same PR if possible', () => {
                 expect(
                     urlToFile(
@@ -199,13 +201,13 @@ describe('github/codeHost', () => {
 })
 
 describe('isPrivateRepository', () => {
-    beforeAll(() => {
+    beforeAll(() => { {
         disableFetchCache()
-    })
+    } })
 
-    afterAll(() => {
+    afterAll(() => { {
         enableFetchCache()
-    })
+    } })
 
     it('returns [private=true] if not on "github.com"', async () => {
         expect(await isPrivateRepository('test-org/test-repo', fetchCache)).toBeTruthy()
@@ -214,25 +216,25 @@ describe('isPrivateRepository', () => {
     describe('when on "github.com"', () => {
         const { location } = window
 
-        beforeAll(() => {
+        beforeAll(() => { {
             // eslint-disable-next-line @typescript-eslint/ban-ts-comment
             // @ts-ignore
             delete window.location
             // eslint-disable-next-line @typescript-eslint/ban-ts-comment
             // @ts-ignore
             window.location = new URL('https://github.com')
-        })
+        } })
 
-        beforeEach(() => {
+        beforeEach(() => { {
             fetch.enableMocks()
             fetch.mockClear()
-        })
+        } })
 
-        afterAll(() => {
+        afterAll(() => { {
             fetch.disableMocks()
 
             window.location = location
-        })
+        } })
 
         it('returns [private=true] on unsuccessful request', async () => {
             fetch.mockRejectOnce(new Error('Error happened'))

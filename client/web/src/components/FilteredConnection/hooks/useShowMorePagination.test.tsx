@@ -1,3 +1,5 @@
+import { describe, vi, it, expect } from 'vitest';
+
 import type { MockedResponse } from '@apollo/client/testing'
 import { fireEvent } from '@testing-library/react'
 

@@ -1,3 +1,5 @@
+import { describe, vi, beforeEach, afterEach, it } from 'vitest';
+
 import assert from 'assert'
 
 import type { ElementHandle, MouseButton } from 'puppeteer'
@@ -35,7 +37,7 @@ describe('CodeMirror blob view', () => {
         })
     })
     afterEachSaveScreenshotIfFailed(() => driver.page)
-    afterEach(() => testContext?.dispose())
+    afterEach(() => { testContext?.dispose() })
 
     const repoName = 'github.com/sourcegraph/jsonrpc2'
     const { graphqlResults: blobGraphqlResults, filePaths } = createBlobPageData({
@@ -66,9 +68,9 @@ describe('CodeMirror blob view', () => {
         ...blobGraphqlResults,
     }
 
-    beforeEach(() => {
+    beforeEach(() => { {
         testContext.overrideGraphQL(commonBlobGraphQlResults)
-    })
+    } })
 
     const blobSelector = '[data-testid="repo-blob"] .cm-editor'
     const wordSelector = blobSelector + ' .hl-typed-Tag'
@@ -260,12 +262,12 @@ describe('CodeMirror blob view', () => {
                 },
             },
         })
-        beforeEach(() => {
+        beforeEach(() => { {
             testContext.overrideGraphQL({
                 ...commonBlobGraphQlResults,
                 ...blobGraphqlResults,
             })
-        })
+        } })
 
         function getMatchCount(): Promise<number> {
             return driver.page.evaluate<() => number>(() => document.querySelectorAll('.cm-searchMatch').length)

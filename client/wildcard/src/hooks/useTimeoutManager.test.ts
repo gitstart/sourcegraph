@@ -1,3 +1,5 @@
+import { describe, vi, beforeAll, afterAll, it } from 'vitest';
+
 import { renderHook } from '@testing-library/react'
 import * as sinon from 'sinon'
 
@@ -5,13 +7,13 @@ import { useTimeoutManager } from './useTimeoutManager'
 
 describe('useTimeoutManager()', () => {
     let clock: sinon.SinonFakeTimers
-    beforeAll(() => {
+    beforeAll(() => { {
         clock = sinon.useFakeTimers()
-    })
+    } })
 
-    afterAll(() => {
+    afterAll(() => { {
         clock.restore()
-    })
+    } })
 
     it('should call the callback after specified time elapses', () => {
         const callback = sinon.spy(() => {

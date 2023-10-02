@@ -1,3 +1,5 @@
+import { describe, vi, it, expect } from 'vitest';
+
 import { parseProductReference } from './SiteAdminFeatureFlagsPage'
 
 describe('parseProductReference', () => {

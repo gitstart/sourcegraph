@@ -1,3 +1,5 @@
+import { describe, vi, beforeAll, afterAll, it } from 'vitest';
+
 import { useRef } from 'react'
 
 import { act, fireEvent, screen } from '@testing-library/react'
@@ -30,14 +32,14 @@ describe('useScrollManager', () => {
     // eslint-disable-next-line @typescript-eslint/unbound-method
     const originalScrollTo = Element.prototype.scrollTo
     const scrollToMock = spy()
-    beforeAll(() => {
+    beforeAll(() => { {
         // scrollTo is not supported in JSDOM, so we mock it for this one test
         // https://github.com/jsdom/jsdom/issues/1422
         Element.prototype.scrollTo = scrollToMock
-    })
-    afterAll(() => {
+    } })
+    afterAll(() => { {
         Element.prototype.scrollTo = originalScrollTo
-    })
+    } })
 
     it('handles scroll correctly', () => {
         jest.useFakeTimers()

@@ -1,3 +1,5 @@
+import { describe, vi, expect } from 'vitest';
+
 import { createRectangle } from '../../../models/geometry/rectangle'
 
 import { getConstrainedElement } from './get-constrained-element'
@@ -8,7 +10,7 @@ describe('getConstrainedElement', () => {
         [createRectangle(0, 0, 200, 200), createRectangle(10, 10, 600, 600), createRectangle(10, 10, 200, 200)],
     ]
 
-    test.each(testCases)('should return correct result with overflowed content', (a, b, expected) => {
+    test.each(testCases)('should return correct result with overflowed content', () => new Promise((a, b, expected) => {
         expect(getConstrainedElement(a, b)).toStrictEqual(expected)
-    })
+    }))
 })

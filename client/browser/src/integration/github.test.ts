@@ -1,3 +1,5 @@
+import { describe, vi, beforeEach, afterEach, it } from 'vitest';
+
 import assert from 'assert'
 
 import type { ExtensionContext } from '@sourcegraph/shared/src/codeintel/legacy-extensions/api'
@@ -108,10 +110,10 @@ describe('GitHub', () => {
         await driver.page.emulateMediaFeatures([{ name: 'prefers-color-scheme', value: 'light' }])
     })
     afterEachSaveScreenshotIfFailed(() => driver.page)
-    afterEach(async () => {
+    afterEach(() => { {
         await testContext?.dispose()
         await driver?.close()
-    })
+    } })
 
     it('adds "View on Sourcegraph" buttons to files', async () => {
         const repoName = 'github.com/sourcegraph/jsonrpc2'
@@ -312,7 +314,7 @@ describe('GitHub', () => {
         describe.skip('Files Changed view', () => {
             // For each pull request test, set up a mock extension that verifies that the correct
             // file and revision info reach extensions.
-            beforeEach(() => {
+            beforeEach(() => { {
                 mockUrls(['https://github.com/*path/find-definition'])
 
                 const { mockExtension, extensionSettings } = setupExtensionMocking()
@@ -435,7 +437,7 @@ describe('GitHub', () => {
                         exports.activate = activate
                     },
                 })
-            })
+            } })
 
             // regexp.go
             const tokens = {
@@ -630,7 +632,7 @@ describe('GitHub', () => {
 
         // TODO(sqs): skipped because these have not been reimplemented after the extension API deprecation
         describe.skip('Commit view', () => {
-            beforeEach(() => {
+            beforeEach(() => { {
                 mockUrls([
                     'https://github.com/*path/find-definition',
                     'https://github.com/**/commits/checks-statuses-rollups',
@@ -685,7 +687,7 @@ describe('GitHub', () => {
                     id: 'simple/hover',
                     bundle: simpleHoverProvider,
                 })
-            })
+            } })
 
             it('has Sourcegraph icon button and provides hover tooltips for pull requests in unified mode', async () => {
                 await driver.page.goto(
@@ -797,13 +799,13 @@ describe('GitHub', () => {
         // global and repository search pages
         // do not record in CI (see https://github.com/sourcegraph/sourcegraph/pull/34171)
         ;(isRecordMode && isCI ? describe.skip : describe)('Search results page', () => {
-            beforeEach(() => {
+            beforeEach(() => { {
                 mockUrls([
                     'https://github.com/_graphql/GetSuggestedNavigationDestinations',
                     'https://github.com/**/commits/checks-statuses-rollups',
                     'https://github.com/commits/badges',
                 ])
-            })
+            } })
 
             const buildGitHubSearchResultsURL = (page: string, searchTerm: string): string => {
                 const url = new URL(page)

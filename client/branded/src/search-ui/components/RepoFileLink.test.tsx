@@ -1,3 +1,5 @@
+import { describe, vi, test, expect } from 'vitest';
+
 import { renderWithBrandedContext } from '@sourcegraph/wildcard/src/testing'
 
 import { RepoFileLink } from './RepoFileLink'

@@ -1,3 +1,5 @@
+import { expect, vi, describe } from 'vitest';
+
 import expect from 'expect'
 
 import { ExternalServiceKind } from '@sourcegraph/shared/src/graphql-operations'

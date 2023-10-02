@@ -1,3 +1,5 @@
+import { describe, vi, it, expect } from 'vitest';
+
 import { Route, Routes } from 'react-router-dom'
 
 import { NOOP_TELEMETRY_SERVICE } from '@sourcegraph/shared/src/telemetry/telemetryService'

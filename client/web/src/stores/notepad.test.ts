@@ -1,3 +1,5 @@
+import { describe, vi, beforeAll, it, expect } from 'vitest';
+
 import { act } from '@testing-library/react'
 
 import { SearchPatternType } from '@sourcegraph/shared/src/graphql-operations'
@@ -15,9 +17,9 @@ import {
 } from './notepad'
 
 describe('notepad store', () => {
-    beforeAll(() => {
+    beforeAll(() => { {
         setAct(act)
-    })
+    } })
 
     const exampleEntryInput: NotepadEntryInput = {
         type: 'search',

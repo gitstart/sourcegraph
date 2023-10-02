@@ -1,3 +1,5 @@
+import { expect, vi } from 'vitest';
+
 import type { Remote } from 'comlink'
 import { throwError, of, Subscription, type Unsubscribable, type Subscribable } from 'rxjs'
 import type * as sourcegraph from 'sourcegraph'

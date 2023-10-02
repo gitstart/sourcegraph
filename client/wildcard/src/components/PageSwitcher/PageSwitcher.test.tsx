@@ -1,3 +1,5 @@
+import { describe, vi, beforeEach, afterEach, it, expect } from 'vitest';
+
 import { render, type RenderResult, cleanup, fireEvent } from '@testing-library/react'
 import sinon from 'sinon'
 
@@ -15,7 +17,7 @@ describe('PageSwitcher', () => {
 
     let defaultProps: PageSwitcherProps
 
-    beforeEach(() => {
+    beforeEach(() => { {
         goToNextPage.resetHistory()
         goToPreviousPage.resetHistory()
         goToFirstPage.resetHistory()
@@ -31,7 +33,7 @@ describe('PageSwitcher', () => {
             hasNextPage: true,
             hasPreviousPage: true,
         }
-    })
+    } })
     afterEach(cleanup)
 
     it('renders the go to first page button', () => {

@@ -1,3 +1,5 @@
+import { describe, vi, beforeEach, it, expect } from 'vitest';
+
 import type { RenderResult } from '@testing-library/react'
 import PuzzleOutlineIcon from 'mdi-react/PuzzleOutlineIcon'
 
@@ -25,9 +27,9 @@ describe('PageHeader', () => {
         },
     ]
 
-    beforeEach(() => {
+    beforeEach(() => { {
         queries = renderWithBrandedContext(<PageHeader path={breadcrumbs} />)
-    })
+    } })
 
     it('renders correctly', () => {
         expect(queries.baseElement).toMatchSnapshot()

@@ -1,3 +1,5 @@
+import { describe, vi, it, expect, beforeEach } from 'vitest';
+
 import assert from 'assert'
 
 import { readFile } from 'mz/fs'
@@ -151,12 +153,12 @@ export function testDOMFunctions(
     { htmlFixturePath, lineCases: codeElements, url }: DOMFunctionsTest
 ): void {
     let codeViewElement: HTMLElement
-    beforeEach(async () => {
+    beforeEach(() => { {
         if (url) {
             jsdom.reconfigure({ url })
         }
         codeViewElement = await getFixtureBody({ htmlFixturePath, isFullDocument: false })
-    })
+    } })
     for (const { diffPart, lineNumber, firstCharacterIsDiffIndicator } of codeElements) {
         describe(
             `line number ${lineNumber}` + (diffPart !== undefined ? ` in ${String(diffPart)} diff part` : ''),

@@ -1,3 +1,5 @@
+import { expect, vi, describe, beforeAll, beforeEach, afterAll, it } from 'vitest';
+
 import fetch from 'jest-fetch-mock'
 import MockDate from 'mockdate'
 
@@ -13,20 +15,20 @@ const expectResponses = (responses: FetchCacheResponse<any>[]): void => {
 }
 
 describe('fetchCache', () => {
-    beforeAll(() => {
+    beforeAll(() => { {
         fetch.enableMocks()
         MockDate.reset()
-    })
+    } })
 
-    beforeEach(() => {
+    beforeEach(() => { {
         fetch.mockClear()
         clearFetchCache()
         fetch.mockResponse(JSON.stringify(EXPECTED_DATA))
-    })
+    } })
 
-    afterAll(() => {
+    afterAll(() => { {
         fetch.disableMocks()
-    })
+    } })
 
     it('makes single request for similar [...args]', async () => {
         const responses = await Promise.all([

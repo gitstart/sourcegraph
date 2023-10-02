@@ -1,3 +1,5 @@
+import { beforeEach, vi, afterEach, test, expect } from 'vitest';
+
 import delay from 'delay'
 import expect from 'expect'
 import { applyEdits, parse, modify } from 'jsonc-parser'
@@ -75,12 +77,12 @@ describe.skip('Core functionality regression test suite', () => {
     })
 
     let alwaysCleanupManager: TestResourceManager
-    beforeEach(() => {
+    beforeEach(() => { {
         alwaysCleanupManager = new TestResourceManager()
-    })
-    afterEach(async () => {
+    } })
+    afterEach(() => { {
         await alwaysCleanupManager.destroyAll()
-    })
+    } })
 
     test('2.2.1 User settings are saved and applied', async () => {
         const getSettings = async () => {

@@ -1,3 +1,5 @@
+import { describe, vi, beforeAll, afterAll, it, expect, beforeEach, test } from 'vitest';
+
 import fetch from 'jest-fetch-mock'
 import { readFile } from 'mz/fs'
 
@@ -20,16 +22,16 @@ describe('gitlab/codeHost', () => {
         const { urlToFile } = gitlabCodeHost
         const sourcegraphURL = 'https://sourcegraph.my.org'
 
-        beforeAll(async () => {
+        beforeAll(() => { {
             document.documentElement.innerHTML = await readFile(__dirname + '/__fixtures__/merge-request.html', 'utf-8')
             jsdom.reconfigure({ url: 'https://gitlab.com/sourcegraph/jsonrpc2/merge_requests/1/diffs' })
             globalThis.gon = { gitlab_url: 'https://gitlab.com' }
-        })
+        } })
 
-        afterAll(() => {
+        afterAll(() => { {
             // Reset resolved Sourcegraph repo name value
             repoNameOnSourcegraph.next('')
-        })
+        } })
 
         it('returns an URL to the Sourcegraph instance if the location has a viewState', () => {
             const rawRepoName = 'gitlab.com/sourcegraph/sourcegraph'
@@ -133,13 +135,13 @@ describe('gitlab/codeHost', () => {
 })
 
 describe('isPrivateRepository', () => {
-    beforeAll(() => {
+    beforeAll(() => { {
         disableFetchCache()
-    })
+    } })
 
-    afterAll(() => {
+    afterAll(() => { {
         enableFetchCache()
-    })
+    } })
 
     it('returns [private=true] if not on "gitlab.com"', async () => {
         expect(await isPrivateRepository('test-org/test-repo', fetchCache)).toBeTruthy()
@@ -149,7 +151,7 @@ describe('isPrivateRepository', () => {
         const { location } = window
         const EMPTY_JSON = JSON.stringify({})
 
-        beforeAll(() => {
+        beforeAll(() => { {
             fetch.enableMocks()
 
             // eslint-disable-next-line @typescript-eslint/ban-ts-comment
@@ -158,17 +160,17 @@ describe('isPrivateRepository', () => {
             // eslint-disable-next-line @typescript-eslint/ban-ts-comment
             // @ts-ignore
             window.location = new URL('https://gitlab.com')
-        })
+        } })
 
-        beforeEach(() => {
+        beforeEach(() => { {
             fetch.mockClear()
-        })
+        } })
 
-        afterAll(() => {
+        afterAll(() => { {
             fetch.disableMocks()
 
             window.location = location
-        })
+        } })
 
         it('makes request without credentials', async () => {
             fetch.mockResponseOnce(EMPTY_JSON)

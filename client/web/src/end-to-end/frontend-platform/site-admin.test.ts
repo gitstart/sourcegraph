@@ -1,3 +1,5 @@
+import { describe, vi, test } from 'vitest';
+
 import { describe, test, before, after } from 'mocha'
 
 import { getConfig } from '@sourcegraph/shared/src/testing/config'

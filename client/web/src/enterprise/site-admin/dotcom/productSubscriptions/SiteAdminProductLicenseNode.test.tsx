@@ -1,19 +1,21 @@
+import { describe, vi, beforeEach, afterEach, test, expect } from 'vitest';
+
 import { MockedTestProvider } from '@sourcegraph/shared/src/testing/apollo'
 import { renderWithBrandedContext } from '@sourcegraph/wildcard/src/testing'
 
 import { SiteAdminProductLicenseNode } from './SiteAdminProductLicenseNode'
 import { mockLicenseContext } from './testUtils'
 
-jest.mock('../../../dotcom/productSubscriptions/AccountName', () => ({ AccountName: 'AccountName' }))
+vi.mock('../../../dotcom/productSubscriptions/AccountName', () => ({ AccountName: 'AccountName' }))
 
 describe('SiteAdminProductLicenseNode', () => {
     const origContext = window.context
-    beforeEach(() => {
+    beforeEach(() => { {
         window.context = mockLicenseContext
-    })
-    afterEach(() => {
+    } })
+    afterEach(() => { {
         window.context = origContext
-    })
+    } })
     test('active', () => {
         expect(
             renderWithBrandedContext(

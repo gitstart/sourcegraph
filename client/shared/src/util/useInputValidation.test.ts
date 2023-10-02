@@ -1,3 +1,5 @@
+import { describe, vi, beforeAll, afterAll, beforeEach, afterEach, it, expect } from 'vitest';
+
 /* eslint-disable @typescript-eslint/no-floating-promises */
 import { renderHook, act } from '@testing-library/react'
 import { last, min, noop } from 'lodash'
@@ -21,15 +23,15 @@ describe('input validation', () => {
         validationOptions: ValidationOptions
     ) => (inputScript: (string | number)[]) => InputValidationState[]
 
-    beforeAll(() => {
+    beforeAll(() => { {
         clock = sinon.useFakeTimers()
-    })
+    } })
 
-    afterAll(() => {
+    afterAll(() => { {
         clock.restore()
-    })
+    } })
 
-    beforeEach(() => {
+    beforeEach(() => { {
         subscriptions = new Subscription()
 
         setupValidationPipelineTest = (
@@ -99,11 +101,11 @@ describe('input validation', () => {
                 return inputValidationStates
             }
         }
-    })
+    } })
 
-    afterEach(() => {
+    afterEach(() => { {
         subscriptions.unsubscribe()
-    })
+    } })
 
     /**
      * Creates a mock input element for emails. Only checks for '@'. Acts as

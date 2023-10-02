@@ -1,12 +1,14 @@
+import { describe, vi, afterEach, it, expect } from 'vitest';
+
 import { act, renderHook } from '@testing-library/react'
 import Cookies from 'js-cookie'
 
 import { useCookieStorage } from './useCookieStorage'
 
 describe('useCookieStorage', () => {
-    afterEach(() => {
+    afterEach(() => { {
         Cookies.remove('test')
-    })
+    } })
 
     describe('typeof value === "string"', () => {
         it('should get initial value', () => {

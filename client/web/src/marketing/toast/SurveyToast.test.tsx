@@ -1,3 +1,5 @@
+import { describe, vi, afterEach, beforeEach, it, expect } from 'vitest';
+
 import { gql } from '@apollo/client'
 import { createMockClient } from '@apollo/client/testing'
 import { cleanup, fireEvent, waitFor } from '@testing-library/react'
@@ -26,10 +28,10 @@ export const mockAuthenticatedUser: AuthenticatedUser = {
 describe('SurveyToast', () => {
     let renderResult: RenderWithBrandedContextResult
 
-    afterEach(() => {
+    afterEach(() => { {
         localStorage.clear()
         cleanup()
-    })
+    } })
 
     const mockClient = createMockClient(
         { contents: JSON.stringify({}) },
@@ -61,9 +63,9 @@ describe('SurveyToast', () => {
 
     describe('toast has not been dismissed by the user', () => {
         describe('before day 3', () => {
-            beforeEach(() => {
+            beforeEach(() => { {
                 renderResult = renderwithTemporarySettings({ 'user.daysActiveCount': 1 })
-            })
+            } })
 
             it('the user is not surveyed', () => {
                 expect(renderResult.container).toBeEmptyDOMElement()
@@ -73,9 +75,9 @@ describe('SurveyToast', () => {
         describe('on day 3', () => {
             const mockScore = 10
 
-            beforeEach(() => {
+            beforeEach(() => { {
                 renderResult = renderwithTemporarySettings({ 'user.daysActiveCount': 3 })
-            })
+            } })
 
             it('the user is surveyed', () => {
                 expect(renderResult.getByText('Tell us what you think')).toBeVisible()
@@ -116,9 +118,9 @@ describe('SurveyToast', () => {
         })
 
         describe('on day 4', () => {
-            beforeEach(() => {
+            beforeEach(() => { {
                 renderResult = renderwithTemporarySettings({ 'user.daysActiveCount': 4 })
-            })
+            } })
 
             it('the user is not surveyed', () => {
                 expect(renderResult.container).toBeEmptyDOMElement()
@@ -126,9 +128,9 @@ describe('SurveyToast', () => {
         })
 
         describe('on day 33', () => {
-            beforeEach(() => {
+            beforeEach(() => { {
                 renderResult = renderwithTemporarySettings({ 'user.daysActiveCount': 33 })
-            })
+            } })
 
             it('the user is surveyed as it has been 30 days since the last notification', () => {
                 expect(renderResult.getByText('Tell us what you think')).toBeVisible()
@@ -137,17 +139,17 @@ describe('SurveyToast', () => {
     })
 
     describe('toast has been temporarily dismissed by the user', () => {
-        beforeEach(() => {
+        beforeEach(() => { {
             renderResult = renderwithTemporarySettings({ 'user.daysActiveCount': 33 })
-        })
+        } })
 
         describe('on day 3', () => {
-            beforeEach(() => {
+            beforeEach(() => { {
                 renderResult = renderwithTemporarySettings({
                     'npsSurvey.hasTemporarilyDismissed': true,
                     'user.daysActiveCount': 3,
                 })
-            })
+            } })
 
             it('the user is not surveyed', () => {
                 expect(renderResult.container).toBeEmptyDOMElement()
@@ -155,12 +157,12 @@ describe('SurveyToast', () => {
         })
 
         describe('on day 30', () => {
-            beforeEach(() => {
+            beforeEach(() => { {
                 renderResult = renderwithTemporarySettings({
                     'npsSurvey.hasTemporarilyDismissed': true,
                     'user.daysActiveCount': 30,
                 })
-            })
+            } })
 
             it('the user is not surveyed but toast dismissal is set to false', async () => {
                 expect(renderResult.container).toBeEmptyDOMElement()
@@ -171,12 +173,12 @@ describe('SurveyToast', () => {
 
     describe('toast has been permanently dismissed by the user', () => {
         describe('on day 3', () => {
-            beforeEach(() => {
+            beforeEach(() => { {
                 renderResult = renderwithTemporarySettings({
                     'npsSurvey.hasPermanentlyDismissed': true,
                     'user.daysActiveCount': 3,
                 })
-            })
+            } })
 
             it('the user is not surveyed', () => {
                 expect(renderResult.container).toBeEmptyDOMElement()
@@ -184,12 +186,12 @@ describe('SurveyToast', () => {
         })
 
         describe('on day 33', () => {
-            beforeEach(() => {
+            beforeEach(() => { {
                 renderResult = renderwithTemporarySettings({
                     'npsSurvey.hasPermanentlyDismissed': true,
                     'user.daysActiveCount': 3,
                 })
-            })
+            } })
 
             it('the user is still not surveyed', () => {
                 expect(renderResult.container).toBeEmptyDOMElement()
@@ -209,7 +211,7 @@ describe('SurveyToast', () => {
             expect(renderResult.getByLabelText('What do you use Sourcegraph for?')).toBeVisible()
         }
 
-        beforeEach(() => moveToUseCaseForm())
+        beforeEach(() => { moveToUseCaseForm() })
 
         it('Should render use case form correctly', () => {
             expect(renderResult.getByLabelText('What do you use Sourcegraph for?')).toBeVisible()

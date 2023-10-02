@@ -1,3 +1,5 @@
+import { describe, vi, beforeEach, afterEach, test, expect } from 'vitest';
+
 import sinon from 'sinon'
 
 import { getDocumentNode } from '@sourcegraph/http-client'
@@ -26,7 +28,7 @@ describe('UserSettingsPermissionsPage', () => {
     // mock current date time for consistent timestamps
     let sandbox: sinon.SinonSandbox
 
-    beforeEach(() => {
+    beforeEach(() => { {
         sandbox = sinon.createSandbox()
         const now = new Date('2023-08-08T12:25:12Z')
         sinon.useFakeTimers({
@@ -34,11 +36,11 @@ describe('UserSettingsPermissionsPage', () => {
             shouldAdvanceTime: true,
             toFake: ['Date'],
         })
-    })
+    } })
 
-    afterEach(() => {
+    afterEach(() => { {
         sandbox.restore()
-    })
+    } })
 
     test('empty state', async () => {
         const component = renderWithBrandedContext(

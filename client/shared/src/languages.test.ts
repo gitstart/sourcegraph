@@ -1,3 +1,5 @@
+import { describe, vi, test, expect } from 'vitest';
+
 import { getPathExtension } from './languages'
 
 describe('util/index', () => {

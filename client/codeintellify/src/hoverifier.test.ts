@@ -1,3 +1,5 @@
+import { describe, vi, afterAll, beforeAll, afterEach, it, expect } from 'vitest';
+
 import { isEqual } from 'lodash'
 import { EMPTY, NEVER, of, Subject, Subscription } from 'rxjs'
 import { delay, distinctUntilChanged, filter, first, map, takeWhile } from 'rxjs/operators'
@@ -30,16 +32,16 @@ describe('Hoverifier', () => {
     afterAll(dom.cleanup)
 
     let testcases: CodeViewProps[] = []
-    beforeAll(() => {
+    beforeAll(() => { {
         testcases = dom.createCodeViews()
-    })
+    } })
 
     let subscriptions = new Subscription()
 
-    afterEach(() => {
+    afterEach(() => { {
         subscriptions.unsubscribe()
         subscriptions = new Subscription()
-    })
+    } })
 
     it('highlights token when hover is fetched (not before)', () => {
         for (const codeView of testcases) {

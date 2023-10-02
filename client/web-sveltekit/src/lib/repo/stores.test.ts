@@ -9,13 +9,13 @@ import { createHistoryPanelStore } from './stores'
 describe('createHistoryPanelStore', () => {
     let historyResults: HistoryResult[] = createHistoryResults(2, 2)
 
-    beforeAll(() => {
+    beforeAll(() => { {
         vi.useFakeTimers()
-    })
+    } })
 
-    afterAll(() => {
+    afterAll(() => { {
         vi.useRealTimers()
-    })
+    } })
 
     it('resolves the initial promise', async () => {
         const [initial] = historyResults

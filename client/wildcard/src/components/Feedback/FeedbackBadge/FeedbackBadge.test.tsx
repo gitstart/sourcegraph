@@ -1,3 +1,5 @@
+import { describe, vi, it, expect } from 'vitest';
+
 import { render } from '@testing-library/react'
 
 import { FEEDBACK_BADGES_STATUS } from './constant'
@@ -8,8 +10,8 @@ describe('FeedbackBadge', () => {
         const { container } = render(<FeedbackBadge status="new" feedback={{ mailto: 'support@sourcegraph.com' }} />)
         expect(container.firstChild).toMatchSnapshot()
     })
-    it.each(FEEDBACK_BADGES_STATUS)("Renders status '%s' correctly", status => {
+    it.each(FEEDBACK_BADGES_STATUS)("Renders status '%s' correctly", () => new Promise(status => {
         const { container } = render(<FeedbackBadge status={status} feedback={{ mailto: 'support@sourcegraph.com' }} />)
         expect(container.firstChild).toMatchSnapshot()
-    })
+    }))
 })

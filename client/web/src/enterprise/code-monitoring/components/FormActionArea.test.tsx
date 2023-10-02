@@ -1,3 +1,5 @@
+import { describe, vi, beforeEach, afterEach, test, expect } from 'vitest';
+
 import { screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import sinon from 'sinon'
@@ -12,14 +14,14 @@ import { FormActionArea } from './FormActionArea'
 
 describe('FormActionArea', () => {
     const origContext = window.context
-    beforeEach(() => {
+    beforeEach(() => { {
         window.context = {
             emailEnabled: true,
         } as any
-    })
-    afterEach(() => {
+    } })
+    afterEach(() => { {
         window.context = origContext
-    })
+    } })
 
     const mockActions: CodeMonitorFields['actions'] = {
         nodes: [

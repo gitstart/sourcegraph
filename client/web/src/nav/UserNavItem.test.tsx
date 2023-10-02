@@ -1,3 +1,5 @@
+import { describe, vi, beforeAll, afterAll, test, expect } from 'vitest';
+
 import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { MemoryRouter } from 'react-router-dom'
@@ -11,13 +13,13 @@ import { renderWithBrandedContext } from '@sourcegraph/wildcard/src/testing'
 import { UserNavItem, type UserNavItemProps } from './UserNavItem'
 
 describe('UserNavItem', () => {
-    beforeAll(() => {
+    beforeAll(() => { {
         setLinkComponent(RouterLink)
-    })
+    } })
 
-    afterAll(() => {
+    afterAll(() => { {
         setLinkComponent(AnchorLink)
-    })
+    } })
 
     const USER: UserNavItemProps['authenticatedUser'] = {
         username: 'alice',

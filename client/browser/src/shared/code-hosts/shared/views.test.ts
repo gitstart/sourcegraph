@@ -1,3 +1,5 @@
+import { describe, vi, beforeEach, afterAll, test, expect } from 'vitest';
+
 import { noop } from 'lodash'
 import { from, type Observable, of, Subject, Subscription, NEVER } from 'rxjs'
 import { bufferCount, map, switchMap, toArray } from 'rxjs/operators'
@@ -27,15 +29,15 @@ const FIXTURE_HTML = `
 describe('trackViews()', () => {
     let subscriptions = new Subscription()
 
-    beforeEach(() => {
+    beforeEach(() => { {
         document.body.innerHTML = FIXTURE_HTML
-    })
+    } })
 
-    afterAll(() => {
+    afterAll(() => { {
         subscriptions.unsubscribe()
         subscriptions = new Subscription()
         document.body.innerHTML = ''
-    })
+    } })
 
     test('detects all views on the page', async () => {
         const mutations: Observable<MutationRecordLike[]> = of([{ addedNodes: [document.body], removedNodes: [] }])
@@ -267,15 +269,15 @@ describe('trackViews()', () => {
 describe('delayUntilIntersecting()', () => {
     let subscriptions = new Subscription()
 
-    beforeEach(() => {
+    beforeEach(() => { {
         document.body.innerHTML = FIXTURE_HTML
-    })
+    } })
 
-    afterAll(() => {
+    afterAll(() => { {
         subscriptions.unsubscribe()
         subscriptions = new Subscription()
         document.body.innerHTML = ''
-    })
+    } })
 
     test('delays emitting views until they intersect and stops observing views as soon as they intersect', () => {
         let observerCallback: IntersectionObserverCallbackLike = noop

@@ -1,3 +1,5 @@
+import { describe, vi, afterEach, beforeEach, it, expect } from 'vitest';
+
 import { cleanup, fireEvent, render, type RenderResult } from '@testing-library/react'
 import { MemoryRouter } from 'react-router-dom'
 
@@ -67,13 +69,13 @@ describe('DiffSplitHunk', () => {
     afterEach(cleanup)
 
     describe('Split Lines Diff', () => {
-        beforeEach(() => {
+        beforeEach(() => { {
             queries = renderWithProps({
                 hunk,
                 lineNumbers: true,
                 fileDiffAnchor: 'anchor_',
             })
-        })
+        } })
         it('will show a DELETED on the left and the ADDED on the right', () => {
             const diffLine = queries.getByTestId('anchor_L162')
             expect(diffLine).toBeInTheDocument()

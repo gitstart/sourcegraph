@@ -3,12 +3,12 @@ import { describe, it, vi, beforeAll, afterAll, expect } from 'vitest'
 
 import { createPromiseStore } from './promises'
 
-beforeAll(() => {
+beforeAll(() => { {
     vi.useFakeTimers()
-})
-afterAll(() => {
+} })
+afterAll(() => { {
     vi.useRealTimers()
-})
+} })
 
 describe('createPromiseStore', () => {
     describe('initial promise', () => {

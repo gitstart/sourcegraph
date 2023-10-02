@@ -1,3 +1,5 @@
+import { describe, vi, it, expect } from 'vitest';
+
 import AJV from 'ajv'
 import addFormats from 'ajv-formats'
 

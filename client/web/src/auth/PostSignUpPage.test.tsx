@@ -1,3 +1,5 @@
+import { describe, vi, test, expect } from 'vitest';
+
 import { gql } from '@apollo/client'
 import type { MockedProviderProps, MockedResponse } from '@apollo/client/testing'
 import { fireEvent, screen, waitFor } from '@testing-library/react'

@@ -1,3 +1,5 @@
+import { describe, vi, beforeEach, afterEach, test, expect } from 'vitest';
+
 import type { MockedResponse } from '@apollo/client/testing'
 import { render } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
@@ -18,14 +20,14 @@ import { EmailAction, SEND_TEST_EMAIL } from './EmailAction'
 
 describe('EmailAction', () => {
     const origContext = window.context
-    beforeEach(() => {
+    beforeEach(() => { {
         window.context = {
             emailEnabled: true,
         } as any
-    })
-    afterEach(() => {
+    } })
+    afterEach(() => { {
         window.context = origContext
-    })
+    } })
 
     const props: ActionProps = {
         action: undefined,

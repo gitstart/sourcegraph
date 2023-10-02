@@ -1,3 +1,5 @@
+import { describe, vi, it, expect } from 'vitest';
+
 import { renderWithBrandedContext } from '../../testing'
 
 import { Button } from './Button'
@@ -14,13 +16,13 @@ describe('Button', () => {
         expect(asFragment()).toMatchSnapshot()
     })
 
-    it.each(BUTTON_VARIANTS)("Renders variant '%s' correctly", variant => {
+    it.each(BUTTON_VARIANTS)("Renders variant '%s' correctly", () => new Promise(variant => {
         const { asFragment } = renderWithBrandedContext(<Button variant={variant}>Hello world</Button>)
         expect(asFragment()).toMatchSnapshot()
-    })
+    }))
 
-    it.each(BUTTON_SIZES)("Renders size '%s' correctly", size => {
+    it.each(BUTTON_SIZES)("Renders size '%s' correctly", () => new Promise(size => {
         const { asFragment } = renderWithBrandedContext(<Button size={size}>Hello world</Button>)
         expect(asFragment()).toMatchSnapshot()
-    })
+    }))
 })

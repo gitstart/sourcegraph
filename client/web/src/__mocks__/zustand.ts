@@ -1,3 +1,5 @@
+import { afterEach, vi, afterAll } from 'vitest';
+
 // Taken from https://github.com/pmndrs/zustand/wiki/Testing
 
 import type { Act } from '@testing-library/react-hooks'
@@ -20,17 +22,17 @@ const create = <T extends object>(createState: StateCreator<T>): UseStore<T> => 
 }
 
 // Reset all stores after each test run
-afterEach(() => {
+afterEach(() => { {
     actToUse(() => {
         for (const resetFunc of storeResetFns) {
             resetFunc()
         }
     })
-})
+} })
 
-afterAll(() => {
+afterAll(() => { {
     actToUse = act
-})
+} })
 
 /**
  * Use this function to overwrite the 'act' function that should be used be

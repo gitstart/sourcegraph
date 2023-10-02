@@ -1,3 +1,5 @@
+import { describe, vi, it, expect } from 'vitest';
+
 import { useEffect } from 'react'
 
 import { gql } from '@apollo/client'

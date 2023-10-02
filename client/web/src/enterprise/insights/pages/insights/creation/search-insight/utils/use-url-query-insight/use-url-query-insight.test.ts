@@ -1,3 +1,5 @@
+import { describe, vi, it, expect } from 'vitest';
+
 import { getInsightDataFromQuery } from './use-url-query-insight'
 
 describe('getInsightDataFromQuery', () => {

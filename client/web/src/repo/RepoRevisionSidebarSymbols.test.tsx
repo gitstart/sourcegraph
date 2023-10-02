@@ -1,3 +1,5 @@
+import { describe, vi, afterEach, beforeEach, it, expect } from 'vitest';
+
 import type { MockedResponse } from '@apollo/client/testing'
 import { cleanup, fireEvent } from '@testing-library/react'
 import delay from 'delay'
@@ -76,7 +78,7 @@ describe('RepoRevisionSidebarSymbols', () => {
     let renderResult: RenderWithBrandedContextResult
     afterEach(cleanup)
 
-    beforeEach(async () => {
+    beforeEach(() => { {
         renderResult = renderWithBrandedContext(
             <MockedTestProvider mocks={[symbolsMock]} addTypename={true}>
                 <RepoRevisionSidebarSymbols {...sidebarProps} />
@@ -100,7 +102,7 @@ describe('RepoRevisionSidebarSymbols', () => {
         })
 
         await waitForNextApolloResponse()
-    })
+    } })
 
     it('renders symbol correctly', () => {
         const symbol = renderResult.getByText('firstSymbol')

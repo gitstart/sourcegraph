@@ -1,3 +1,5 @@
+import { describe, vi, beforeAll, afterAll, it, expect } from 'vitest';
+
 import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { act } from 'react-dom/test-utils'
@@ -31,15 +33,15 @@ describe('SearchContextDropdown', () => {
     const RealIntersectionObserver = window.IntersectionObserver
     let clock: sinon.SinonFakeTimers
 
-    beforeAll(() => {
+    beforeAll(() => { {
         clock = useFakeTimers()
         window.IntersectionObserver = MockIntersectionObserver
-    })
+    } })
 
-    afterAll(() => {
+    afterAll(() => { {
         clock.restore()
         window.IntersectionObserver = RealIntersectionObserver
-    })
+    } })
 
     it('should start closed', () => {
         render(<SearchContextDropdown {...defaultProps} />)

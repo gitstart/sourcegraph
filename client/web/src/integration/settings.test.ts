@@ -1,3 +1,5 @@
+import { describe, vi, beforeEach, afterEach, it } from 'vitest';
+
 import assert from 'assert'
 
 import { accessibilityAudit } from '@sourcegraph/shared/src/testing/accessibility'
@@ -25,7 +27,7 @@ describe('Settings', () => {
         })
     })
     afterEachSaveScreenshotIfFailed(() => driver.page)
-    afterEach(() => testContext?.dispose())
+    afterEach(() => { testContext?.dispose() })
 
     describe('User settings page', () => {
         it('updates user settings', async () => {
