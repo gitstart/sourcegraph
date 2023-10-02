@@ -1,3 +1,5 @@
+import { describe, vi, it, expect } from 'vitest';
+
 import { SymbolKind } from '../../graphql-operations'
 
 import { convertMarkdownToBlocks } from './convertMarkdownToBlocks'

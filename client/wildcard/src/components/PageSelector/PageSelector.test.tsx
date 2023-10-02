@@ -1,3 +1,5 @@
+import { describe, vi, beforeEach, afterEach, it, expect, beforeAll } from 'vitest';
+
 import { render, type RenderResult, cleanup, fireEvent } from '@testing-library/react'
 import sinon from 'sinon'
 

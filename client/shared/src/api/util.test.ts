@@ -1,3 +1,5 @@
+import { describe, vi, test, expect, it } from 'vitest';
+
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import pTimeout from 'p-timeout'

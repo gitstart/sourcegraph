@@ -1,3 +1,5 @@
+import { describe, vi } from 'vitest';
+
 import { applyEdits, type JSONPath, modify } from 'jsonc-parser'
 import { describe, before, after, test } from 'mocha'
 

@@ -1,3 +1,5 @@
+import { describe, vi, beforeEach, test, expect } from 'vitest';
+
 import * as dom from './highlightNode'
 
 describe('util/dom', () => {

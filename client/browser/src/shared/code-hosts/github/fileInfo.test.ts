@@ -1,3 +1,5 @@
+import { describe, vi, it, expect } from 'vitest';
+
 import { readFile } from 'mz/fs'
 
 import { getFilePath, getFilePathFromURL } from './util'

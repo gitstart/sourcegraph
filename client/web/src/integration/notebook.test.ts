@@ -1,3 +1,5 @@
+import { describe, vi, beforeEach, afterEach, it, expect } from 'vitest';
+
 import fs from 'fs'
 import path from 'path'
 
@@ -217,7 +219,7 @@ describe('Search Notebook', () => {
         })
     })
     afterEachSaveScreenshotIfFailed(() => driver.page)
-    afterEach(() => testContext?.dispose())
+    afterEach(() => { testContext?.dispose() })
 
     const getBlockIds = () =>
         driver.page.evaluate(() => {

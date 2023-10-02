@@ -1,3 +1,5 @@
+import { describe, vi, it, expect } from 'vitest';
+
 import { searchQueryValidator } from './search-query-validator'
 
 const GOOD_QUERY = 'patterntype:regexp required_version = \\"(.*)\\"  lang:Terraform archived:no fork:no'
@@ -17,12 +19,12 @@ describe('searchQueryValidator', () => {
         expect(searchQueryValidator(GOOD_QUERY)).toEqual(PASSING_VALIDATION)
     })
 
-    it.each(['and', 'or', 'not'])('validates not containing `%s`', (operator: string) => {
+    it.each(['and', 'or', 'not'])('validates not containing `%s`', () => new Promise((operator: string) => {
         expect(searchQueryValidator(`${GOOD_QUERY} ${operator}`)).toEqual({
             ...PASSING_VALIDATION,
             isValidOperator: false,
         })
-    })
+    }))
 
     it('validates not using `repo`', () => {
         expect(searchQueryValidator(`${GOOD_QUERY} repo:any`)).toEqual({
@@ -31,12 +33,12 @@ describe('searchQueryValidator', () => {
         })
     })
 
-    it.each(['type:commit', 'type:diff'])('validates not using `commit` or `diff`', (type: string) => {
+    it.each(['type:commit', 'type:diff'])('validates not using `commit` or `diff`', () => new Promise((type: string) => {
         expect(searchQueryValidator(`${GOOD_QUERY} ${type}`)).toEqual({
             ...PASSING_VALIDATION,
             isNotCommitOrDiff: false,
         })
-    })
+    }))
 
     it('validates no new lines', () => {
         expect(searchQueryValidator(`${GOOD_QUERY} \\n`)).toEqual({

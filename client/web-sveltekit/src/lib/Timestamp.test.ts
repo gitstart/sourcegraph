@@ -38,15 +38,12 @@ describe('Timestamp.svelte', () => {
         useRealTimers()
     })
 
-    test.each([{}, { addSuffix: false }, { strict: true }, { addSuffix: false, strict: true }, { showAbsolute: true }])(
-        'props: %o',
-        (_, options) => {
+    test.each([{}, { addSuffix: false }, { strict: true }, { addSuffix: false, strict: true }, { showAbsolute: true }])('props: %o', () => new Promise((_, options) => {
             useFakeTimers()
 
             renderTimestamp(options)
             expect(screen.getByTestId('timestamp').textContent).toMatchSnapshot()
 
             useRealTimers()
-        }
-    )
+        }))
 })

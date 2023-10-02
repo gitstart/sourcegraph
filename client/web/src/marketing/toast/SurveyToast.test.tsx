@@ -1,3 +1,5 @@
+import { describe, vi, afterEach, beforeEach, it, expect } from 'vitest';
+
 import { gql } from '@apollo/client'
 import { createMockClient } from '@apollo/client/testing'
 import { cleanup, fireEvent, waitFor } from '@testing-library/react'
@@ -209,7 +211,7 @@ describe('SurveyToast', () => {
             expect(renderResult.getByLabelText('What do you use Sourcegraph for?')).toBeVisible()
         }
 
-        beforeEach(() => moveToUseCaseForm())
+        beforeEach(() => { moveToUseCaseForm() })
 
         it('Should render use case form correctly', () => {
             expect(renderResult.getByLabelText('What do you use Sourcegraph for?')).toBeVisible()

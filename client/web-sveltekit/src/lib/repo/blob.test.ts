@@ -1,4 +1,5 @@
-import { describe, test, expect } from 'vitest'
+
+import { describe, test, expect, vi } from 'vitest'
 
 import { updateSearchParamsWithLineInformation } from './blob'
 
@@ -8,9 +9,9 @@ describe('updateSearchParamsWithLineInformation', () => {
         ${{ line: 5 }}               | ${'L5'}
         ${{ line: 5, character: 3 }} | ${'L5'}
         ${{ line: 5, endLine: 7 }}   | ${'L5-7'}
-    `('$range -> $expected', ({ range, expected }) => {
+    `('$range -> $expected', () => new Promise(({ range, expected }) => {
         expect(updateSearchParamsWithLineInformation(new URLSearchParams(), range)).toBe(expected)
-    })
+    }))
 
     test('replace existing line information', () => {
         expect(updateSearchParamsWithLineInformation(new URLSearchParams('L1'), { line: 2 })).toBe('L2')

@@ -1,3 +1,5 @@
+import { test, vi, expect, describe } from 'vitest';
+
 import type { FuzzySearchParameters } from './FuzzySearch'
 import { WordSensitiveFuzzySearch, allFuzzyParts, fuzzyMatchesQuery } from './WordSensitiveFuzzySearch'
 

@@ -1,3 +1,5 @@
+import { describe, vi, expect } from 'vitest';
+
 import { GRAPHQL_URI } from './constants'
 import { buildGraphQLUrl, gql } from './graphql'
 
@@ -53,7 +55,7 @@ describe('buildGraphQLUrl', () => {
         ],
     ]
 
-    test.each(testCases)('correctly constructs %s', (title, request, baseUrl, expectedResult) => {
+    test.each(testCases)('correctly constructs %s', () => new Promise((title, request, baseUrl, expectedResult) => {
         expect(buildGraphQLUrl({ request, baseUrl })).toEqual(expectedResult)
-    })
+    }))
 })

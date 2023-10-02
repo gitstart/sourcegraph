@@ -1,3 +1,5 @@
+import { describe, vi, it, expect } from 'vitest';
+
 import { render } from '@testing-library/react'
 
 import { Input } from './Input'
@@ -53,8 +55,8 @@ describe('Input', () => {
         expect(container.firstChild).toMatchSnapshot()
     })
 
-    it.each(STATUS)("Renders status '%s' correctly", status => {
+    it.each(STATUS)("Renders status '%s' correctly", () => new Promise(status => {
         const { container } = render(<Input status={status} defaultValue="" />)
         expect(container.firstChild).toMatchSnapshot()
-    })
+    }))
 })

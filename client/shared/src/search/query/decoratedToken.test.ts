@@ -1,3 +1,5 @@
+import { describe, vi, test, expect } from 'vitest';
+
 import { SearchPatternType } from '../../graphql-operations'
 
 import { type DecoratedToken, decorate } from './decoratedToken'

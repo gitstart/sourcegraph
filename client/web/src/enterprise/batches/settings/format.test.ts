@@ -1,3 +1,5 @@
+import { describe, vi, expect } from 'vitest';
+
 import { formatDays, formatRate } from './format'
 
 describe('format', () => {
@@ -13,9 +15,9 @@ describe('format', () => {
             { rate: '10/minute', result: '10 changesets per minute', name: 'is 10 changesets per minute' },
         ]
 
-        test.each(testCases)('rate $name', ({ rate, result }) => {
+        test.each(testCases)('rate $name', () => new Promise(({ rate, result }) => {
             expect(formatRate(rate)).toEqual(result)
-        })
+        }))
     })
 
     describe('formatDays', () => {
@@ -30,8 +32,8 @@ describe('format', () => {
             { days: ['tuesday', 'friday'], result: 'Tuesday, Friday', name: 'multiple days' },
         ]
 
-        test.each(testCases)('argument is $name', ({ days, result }) => {
+        test.each(testCases)('argument is $name', () => new Promise(({ days, result }) => {
             expect(formatDays(days)).toEqual(result)
-        })
+        }))
     })
 })

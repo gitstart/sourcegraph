@@ -1,3 +1,5 @@
+import { describe, vi, it, expect, test } from 'vitest';
+
 import { EditorState } from '@codemirror/state'
 
 import { SearchPatternType } from '@sourcegraph/shared/src/graphql-operations'

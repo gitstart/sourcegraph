@@ -1,3 +1,5 @@
+import { describe, vi, beforeEach, afterEach, it } from 'vitest';
+
 import assert from 'assert'
 import * as path from 'path'
 
@@ -75,7 +77,7 @@ describe('Repository', () => {
         })
     })
     afterEachSaveScreenshotIfFailed(() => driver.page)
-    afterEach(() => testContext?.dispose())
+    afterEach(() => { testContext?.dispose() })
 
     async function assertSelectorHasText(selector: string, text: string) {
         assert.strictEqual(

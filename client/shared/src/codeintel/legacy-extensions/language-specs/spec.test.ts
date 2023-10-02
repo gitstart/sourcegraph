@@ -1,3 +1,5 @@
+import { test, vi } from 'vitest';
+
 import type { FilterContext, Result } from './language-spec'
 
 /**

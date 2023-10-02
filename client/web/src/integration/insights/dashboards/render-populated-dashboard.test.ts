@@ -1,3 +1,5 @@
+import { describe, vi, beforeEach, it } from 'vitest';
+
 import assert from 'assert'
 
 import type { Page } from 'puppeteer'

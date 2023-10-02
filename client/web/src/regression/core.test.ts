@@ -1,3 +1,5 @@
+import { beforeEach, vi, afterEach, test, expect } from 'vitest';
+
 import delay from 'delay'
 import expect from 'expect'
 import { applyEdits, parse, modify } from 'jsonc-parser'

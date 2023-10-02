@@ -1,3 +1,5 @@
+import { describe, vi, it, expect, test } from 'vitest';
+
 import { renderMarkdown, registerHighlightContributions, escapeMarkdown } from '.'
 
 registerHighlightContributions()

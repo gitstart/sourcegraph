@@ -1,3 +1,5 @@
+import { describe, vi, expect } from 'vitest';
+
 import expect from 'expect'
 import { describe, test, before, after } from 'mocha'
 

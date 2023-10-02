@@ -1,3 +1,5 @@
+import { describe, vi, test, expect } from 'vitest';
+
 import { createAggregateError, isErrorLike } from '@sourcegraph/common'
 
 import {

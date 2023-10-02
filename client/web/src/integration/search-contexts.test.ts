@@ -1,3 +1,5 @@
+import { describe, vi, beforeEach, afterEach, test, expect } from 'vitest';
+
 import { subDays } from 'date-fns'
 import expect from 'expect'
 import { range } from 'lodash'
@@ -40,7 +42,7 @@ describe('Search contexts', () => {
         testContext.overrideSearchStreamEvents(mixedSearchStreamEvents)
     })
     afterEachSaveScreenshotIfFailed(() => driver.page)
-    afterEach(() => testContext?.dispose())
+    afterEach(() => { testContext?.dispose() })
 
     const testContextForSearchContexts: Partial<WebGraphQlOperations> = {
         ...commonSearchGraphQLResults,

@@ -1,3 +1,5 @@
+import { describe, vi, it, expect, beforeEach } from 'vitest';
+
 import assert from 'assert'
 
 import { readFile } from 'mz/fs'

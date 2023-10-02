@@ -1,3 +1,5 @@
+import { describe, vi, test, expect } from 'vitest';
+
 import { filter, sort, embeddedReposToMarkdown } from './index'
 
 const fetch = require('node-fetch')
@@ -14,7 +16,7 @@ interface Embedding {
 }
 
 describe('filter', () => {
-    test('filters and sorts repo embedding jobs', done => {
+    test('filters and sorts repo embedding jobs', () => new Promise(done => {
         const input: Embedding[] = [
             {
                 id: '1',
@@ -61,7 +63,7 @@ describe('filter', () => {
         ]
         expect(filter(input)).toEqual(expected)
         done()
-    })
+    }))
 })
 
 describe('sort', () => {

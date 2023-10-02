@@ -1,3 +1,5 @@
+import { expect, vi, describe, beforeAll, beforeEach, it, afterEach, test } from 'vitest';
+
 import { nextTick } from 'process'
 import { promisify } from 'util'
 
@@ -52,7 +54,7 @@ const createTestElement = (): HTMLElement => {
     return element
 }
 
-jest.mock('uuid', () => ({
+vi.mock('uuid', () => ({
     v4: () => 'uuid',
 }))
 

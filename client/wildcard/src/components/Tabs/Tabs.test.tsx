@@ -1,3 +1,5 @@
+import { describe, vi, afterEach, beforeEach, it, expect } from 'vitest';
+
 import { render, type RenderResult, cleanup, fireEvent } from '@testing-library/react'
 
 import { Tab, TabList, TabPanel, TabPanels, Tabs, type TabsProps } from './Tabs'

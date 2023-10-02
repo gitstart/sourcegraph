@@ -1,3 +1,5 @@
+import { describe, vi, beforeAll, afterAll, it } from 'vitest';
+
 import { renderHook } from '@testing-library/react'
 import * as sinon from 'sinon'
 

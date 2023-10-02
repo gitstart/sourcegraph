@@ -1,3 +1,5 @@
+import { describe, vi, it, expect } from 'vitest';
+
 // causes false positive on act()
 
 import { useMemo, useCallback } from 'react'

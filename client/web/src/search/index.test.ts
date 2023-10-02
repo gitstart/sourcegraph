@@ -1,3 +1,5 @@
+import { describe, vi, test, expect, beforeEach, afterEach, it } from 'vitest';
+
 import { type Location, createPath } from 'react-router-dom'
 import { Subscription, Subject } from 'rxjs'
 import { tap, last } from 'rxjs/operators'
@@ -192,7 +194,7 @@ describe('updateQueryStateFromURL', () => {
     const isSearchContextAvailable = () => Promise.resolve(true)
 
     describe('search context', () => {
-        it('should extract the search context from the query', done => {
+        it('should extract the search context from the query', () => new Promise(done => {
             const [locationSubject, location] = createHistoryObservable('q=context:me+test')
 
             getQueryStateFromLocation({
@@ -212,6 +214,6 @@ describe('updateQueryStateFromURL', () => {
 
             locationSubject.next(location)
             locationSubject.complete()
-        })
+        }))
     })
 })

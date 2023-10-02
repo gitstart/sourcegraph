@@ -1,3 +1,5 @@
+import { describe, vi, beforeEach, afterEach, test, expect } from 'vitest';
+
 import sinon from 'sinon'
 
 import { getDocumentNode } from '@sourcegraph/http-client'

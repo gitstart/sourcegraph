@@ -1,3 +1,5 @@
+import { describe, vi, test, expect } from 'vitest';
+
 import type { SettingsEdit } from '../api/client/services/settings'
 
 import { convertUpdateConfigurationCommandArguments } from './commands'

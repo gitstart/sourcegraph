@@ -1,3 +1,5 @@
+import { describe, vi, beforeAll, it, expect } from 'vitest';
+
 import { act } from '@testing-library/react'
 
 import { SearchPatternType } from '@sourcegraph/shared/src/graphql-operations'

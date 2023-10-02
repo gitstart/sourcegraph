@@ -1,3 +1,5 @@
+import { describe, vi, beforeEach, it } from 'vitest';
+
 import { downloadAndUnzipVSCode } from '@vscode/test-electron'
 
 import {

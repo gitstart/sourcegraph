@@ -1,3 +1,5 @@
+import { describe, vi, test } from 'vitest';
+
 import { describe, test } from 'mocha'
 import { merge } from 'rxjs'
 import { fromFetch } from 'rxjs/fetch'

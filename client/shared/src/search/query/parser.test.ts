@@ -1,3 +1,5 @@
+import { describe, vi, test, expect } from 'vitest';
+
 import { parseSearchQuery, type Node, type ParseSuccess } from './parser'
 
 expect.addSnapshotSerializer({

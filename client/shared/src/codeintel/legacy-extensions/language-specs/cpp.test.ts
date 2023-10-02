@@ -1,3 +1,5 @@
+import { describe, vi, it } from 'vitest';
+
 import * as assert from 'assert'
 
 import { cppSpec } from './cpp'

@@ -1,3 +1,5 @@
+import { afterEach, vi } from 'vitest';
+
 import { writeFile, mkdir } from 'mz/fs'
 import pTimeout from 'p-timeout'
 import type { Browser, WebWorker } from 'puppeteer'
@@ -25,7 +27,7 @@ let warnedNoCoverage = false
  * Saves coverage recorded by the instrumented code in `.nyc_output` after each test.
  */
 export function afterEachRecordCoverage(getDriver: () => Driver): void {
-    afterEach(() => recordCoverage(getDriver().browser))
+    afterEach(() => { recordCoverage(getDriver().browser) })
 }
 
 /**

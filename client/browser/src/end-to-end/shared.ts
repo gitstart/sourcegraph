@@ -1,3 +1,5 @@
+import { describe, vi, it, expect } from 'vitest';
+
 import assert from 'assert'
 
 import expect from 'expect'

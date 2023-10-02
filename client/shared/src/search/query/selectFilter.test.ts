@@ -1,3 +1,5 @@
+import { describe, vi, test, expect } from 'vitest';
+
 import { selectorCompletion } from './selectFilter'
 import { type Literal, createLiteral } from './token'
 

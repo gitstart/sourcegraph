@@ -1,3 +1,5 @@
+import { describe, vi, it, expect } from 'vitest';
+
 import { formatDurationLong } from './time'
 
 describe('formatDurationLong', () => {

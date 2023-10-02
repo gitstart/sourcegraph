@@ -1,3 +1,5 @@
+import { describe, vi, it, expect } from 'vitest';
+
 import { ExternalServiceKind } from '../graphql-operations'
 import { parseBrowserRepoURL } from '../util/url'
 

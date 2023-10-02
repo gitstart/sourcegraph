@@ -1,3 +1,5 @@
+import { describe, vi, beforeEach, afterEach, it, expect } from 'vitest';
+
 import assert from 'assert'
 
 import expect from 'expect'
@@ -105,7 +107,7 @@ describe('Code monitoring', () => {
         testContext.overrideJsContext({ emailEnabled: true })
     })
     afterEachSaveScreenshotIfFailed(() => driver.page)
-    afterEach(() => testContext?.dispose())
+    afterEach(() => { testContext?.dispose() })
 
     describe('Code monitoring', () => {
         it('is styled correctly', async () => {
