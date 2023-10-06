@@ -1,3 +1,5 @@
+import { describe, beforeEach, it } from 'vitest';
+
 import assert from 'assert'
 
 import expect from 'expect'

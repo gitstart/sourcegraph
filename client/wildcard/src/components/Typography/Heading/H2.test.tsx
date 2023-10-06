@@ -1,3 +1,5 @@
+import { describe, it, expect } from 'vitest';
+
 import { render } from '@testing-library/react'
 
 import { H2 } from './H2'

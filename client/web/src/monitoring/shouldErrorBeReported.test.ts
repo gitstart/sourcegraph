@@ -1,3 +1,5 @@
+import { describe, test, expect } from 'vitest';
+
 import { AbortError } from '@sourcegraph/common'
 import { HTTPStatusError } from '@sourcegraph/http-client'
 

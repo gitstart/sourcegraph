@@ -1,3 +1,5 @@
+import { describe, it } from 'vitest';
+
 import * as assert from 'assert'
 
 import { pythonSpec, relativeImportPath } from './python'

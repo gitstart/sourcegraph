@@ -1,3 +1,5 @@
+import { expect, describe, test } from 'vitest';
+
 import { FilterType } from './filters'
 import { FilterKind, findFilter } from './query'
 import type { Filter } from './token'

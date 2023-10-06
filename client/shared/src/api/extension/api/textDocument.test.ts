@@ -1,3 +1,5 @@
+import { describe, test, expect } from 'vitest';
+
 import { Position, Range } from '@sourcegraph/extension-api-classes'
 
 import { OFFSET_TO_POSITION_TESTS, POSITION_TO_OFFSET_TESTS } from '../../client/types/textDocument.test'

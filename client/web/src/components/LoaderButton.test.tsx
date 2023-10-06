@@ -1,3 +1,5 @@
+import { describe, it, expect } from 'vitest';
+
 import { renderWithBrandedContext } from '@sourcegraph/wildcard/src/testing'
 
 import { LoaderButton } from './LoaderButton'

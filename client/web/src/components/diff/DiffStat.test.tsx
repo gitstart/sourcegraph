@@ -1,3 +1,5 @@
+import { describe, test, expect } from 'vitest';
+
 import { render } from '@testing-library/react'
 
 import { DiffStat, DiffStatSquares, DiffStatStack } from './DiffStat'

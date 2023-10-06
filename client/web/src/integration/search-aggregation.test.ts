@@ -1,3 +1,5 @@
+import { describe, beforeEach, afterEach } from 'vitest';
+
 import delay from 'delay'
 import expect from 'expect'
 import { test } from 'mocha'
@@ -157,7 +159,7 @@ describe('Search aggregation', () => {
     })
 
     after(() => driver?.close())
-    afterEach(() => testContext?.dispose())
+    afterEach(() => { testContext?.dispose() })
     afterEachSaveScreenshotIfFailed(() => driver.page)
 
     test('should be hidden if feature flag is off', async () => {
@@ -173,7 +175,7 @@ describe('Search aggregation', () => {
 
     describe('with aggregation feature flag on', () => {
         beforeEach(() =>
-            testContext.overrideGraphQL({
+            { testContext.overrideGraphQL({
                 ...commonSearchGraphQLResults,
                 ViewerSettings: () => ({
                     viewerSettings: {
@@ -198,7 +200,7 @@ describe('Search aggregation', () => {
                         final: JSON.stringify({}),
                     },
                 }),
-            })
+            }) }
         )
 
         test('should sync aggregation settings across different UI via URL', async () => {

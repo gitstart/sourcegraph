@@ -1,3 +1,5 @@
+import { describe, test, expect } from 'vitest';
+
 import { PrefixSumComputer, type PrefixSumIndexOfResult, toUint32 } from './prefixSumComputer'
 
 // Adapted from

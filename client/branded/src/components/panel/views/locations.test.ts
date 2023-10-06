@@ -1,3 +1,5 @@
+import { describe, test, expect } from 'vitest';
+
 import type { Location } from '@sourcegraph/extension-api-types'
 
 import { type GroupedLocations, groupLocations } from './locations'

@@ -1,3 +1,5 @@
+import { describe, test, expect } from 'vitest';
+
 import { createSVGIcon, isInputElement } from './dom'
 
 describe('isInputElement', () => {

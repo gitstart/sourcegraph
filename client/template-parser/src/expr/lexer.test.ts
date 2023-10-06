@@ -1,3 +1,5 @@
+import { describe, test, expect } from 'vitest';
+
 import { Lexer, OPERATOR_CHARS, OPERATORS, type OperatorTree, TemplateLexer, type Token, TokenType } from './lexer'
 
 describe('Lexer', () => {

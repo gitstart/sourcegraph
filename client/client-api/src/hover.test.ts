@@ -1,3 +1,5 @@
+import { describe, test, expect } from 'vitest';
+
 import { MarkupKind } from '@sourcegraph/extension-api-classes'
 import type { Range } from '@sourcegraph/extension-api-types'
 

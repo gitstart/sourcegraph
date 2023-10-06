@@ -1,3 +1,5 @@
+import { describe, beforeEach, afterEach, it } from 'vitest';
+
 import assert from 'assert'
 
 import { createDriverForTest, type Driver } from '@sourcegraph/shared/src/testing/driver'
@@ -26,7 +28,7 @@ describe('Code insights page', () => {
     })
 
     after(() => driver?.close())
-    afterEach(() => testContext?.dispose())
+    afterEach(() => { testContext?.dispose() })
     afterEachSaveScreenshotIfFailed(() => driver.page)
 
     it('should update user/org settings if insight delete happened', async () => {

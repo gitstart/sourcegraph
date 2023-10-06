@@ -1,3 +1,5 @@
+import { describe, afterAll, it } from 'vitest';
+
 import { cleanup } from '@testing-library/react'
 import * as H from 'history'
 import { of } from 'rxjs'

@@ -1,3 +1,5 @@
+import { expect, describe, test } from 'vitest';
+
 import { scanPredicate, resolveAccess, PREDICATES } from './predicates'
 
 expect.addSnapshotSerializer({

@@ -1,3 +1,5 @@
+import { describe, it } from 'vitest';
+
 import mock from 'mock-require'
 
 // Stub Sourcegraph API

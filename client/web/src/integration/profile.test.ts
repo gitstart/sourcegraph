@@ -1,3 +1,5 @@
+import { describe, beforeEach, afterEach, it } from 'vitest';
+
 import assert from 'assert'
 
 import { subDays } from 'date-fns'
@@ -51,7 +53,7 @@ describe('User profile page', () => {
         })
     })
     afterEachSaveScreenshotIfFailed(() => driver.page)
-    afterEach(() => testContext?.dispose())
+    afterEach(() => { testContext?.dispose() })
 
     it('updates display name', async () => {
         testContext.overrideGraphQL({
@@ -97,7 +99,7 @@ describe('User Different Settings Page', () => {
         })
     })
     afterEachSaveScreenshotIfFailed(() => driver.page)
-    afterEach(() => testContext?.dispose())
+    afterEach(() => { testContext?.dispose() })
 
     it('display user email setting page', async () => {
         testContext.overrideGraphQL({

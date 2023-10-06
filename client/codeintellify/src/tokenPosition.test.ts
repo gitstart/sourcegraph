@@ -1,3 +1,5 @@
+import { describe, afterAll, beforeAll, it, expect } from 'vitest';
+
 import * as assert from 'assert'
 
 import type { Position, Range } from '@sourcegraph/extension-api-types'

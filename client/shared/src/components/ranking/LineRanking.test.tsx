@@ -1,3 +1,5 @@
+import { expect, describe, test } from 'vitest';
+
 import { range } from 'lodash'
 
 import { calculateMatchGroupsSorted, mergeContext } from './LineRanking'

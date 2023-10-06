@@ -1,3 +1,5 @@
+import { describe, beforeEach, afterEach, it } from 'vitest';
+
 import { subDays } from 'date-fns'
 
 import {
@@ -320,7 +322,7 @@ describe('RepositoryCommitPage', () => {
         testContext.overrideGraphQL(commonBlobGraphQlResults)
     })
     afterEachSaveScreenshotIfFailed(() => driver.page)
-    afterEach(() => testContext?.dispose())
+    afterEach(() => { testContext?.dispose() })
 
     it('Display diff in unified mode', async () => {
         await driver.page.goto(`${driver.sourcegraphBaseUrl}/${repositoryName}/-/commit/${commitID}`)

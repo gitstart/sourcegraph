@@ -1,3 +1,5 @@
+import { describe, test, expect } from 'vitest';
+
 import { ExternalServiceKind } from '../../graphql-operations'
 
 import type { ExternalServiceFieldsWithConfig } from './backend'

@@ -1,3 +1,5 @@
+import { describe, test, expect } from 'vitest';
+
 import { GRAPHQL_URI } from './constants'
 import { buildGraphQLUrl, gql } from './graphql'
 

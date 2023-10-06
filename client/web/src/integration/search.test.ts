@@ -1,3 +1,5 @@
+import { describe, beforeEach, afterEach } from 'vitest';
+
 import expect from 'expect'
 import { test } from 'mocha'
 import { Key } from 'ts-key-enum'
@@ -137,7 +139,7 @@ describe('Search', () => {
         testContext.overrideSearchStreamEvents(mockDefaultStreamEvents)
     })
     afterEachSaveScreenshotIfFailed(() => driver.page)
-    afterEach(() => testContext?.dispose())
+    afterEach(() => { testContext?.dispose() })
 
     describe('Search filters', () => {
         test('Search filters are shown on search result pages and clicking them triggers a new search', async () => {

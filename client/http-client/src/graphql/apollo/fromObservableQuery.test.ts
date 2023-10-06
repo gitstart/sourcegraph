@@ -1,3 +1,5 @@
+import { describe, it, expect } from 'vitest';
+
 import { Observable as ZenObservable, type ObservableQuery } from '@apollo/client'
 import delay from 'delay'
 import { isObservable } from 'rxjs'
@@ -24,14 +26,14 @@ describe('fromObservableQuery', () => {
         expect(isObservable(observable)).toBe(true)
     })
 
-    it('subscribes to `ObservableQuery` data', done => {
+    it('subscribes to `ObservableQuery` data', () => new Promise(done => {
         const observable = fromObservableQuery(createObservableQuery())
 
         observable.subscribe(data => {
             expect(data).toEqual(QUERY_RESULT)
             done()
         })
-    })
+    }))
 
     it('exposes `ObservableQuery` unsubscribe method', () => {
         const observable = fromObservableQuery(createObservableQuery())
@@ -48,14 +50,14 @@ describe('fromObservableQueryPromise', () => {
         expect(isObservable(observable)).toBe(true)
     })
 
-    it('subscribes to `ObservableQuery` data', done => {
+    it('subscribes to `ObservableQuery` data', () => new Promise(done => {
         const observable = fromObservableQueryPromise(Promise.resolve(createObservableQuery()))
 
         observable.subscribe(data => {
             expect(data).toEqual(QUERY_RESULT)
             done()
         })
-    })
+    }))
 
     it('exposes `ObservableQuery` unsubscribe method', () => {
         const observable = fromObservableQueryPromise(Promise.resolve(createObservableQuery()))

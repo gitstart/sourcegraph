@@ -1,3 +1,5 @@
+import { describe, test, expect } from 'vitest';
+
 import { getDocumentNode } from '@sourcegraph/http-client'
 import { MockedTestProvider, waitForNextApolloResponse } from '@sourcegraph/shared/src/testing/apollo'
 import { renderWithBrandedContext } from '@sourcegraph/wildcard/src/testing'

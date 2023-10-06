@@ -1,3 +1,5 @@
+import { expect, describe, test } from 'vitest';
+
 import { SearchPatternType } from '../../graphql-operations'
 
 import { scanSearchQuery, scanBalancedLiteral, toPatternResult } from './scanner'

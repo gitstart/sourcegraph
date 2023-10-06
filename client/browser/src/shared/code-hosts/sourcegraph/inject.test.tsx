@@ -1,3 +1,5 @@
+import { describe, it, expect } from 'vitest';
+
 import { checkIsSourcegraph } from './inject'
 
 describe('checkIsSourcegraph()', () => {

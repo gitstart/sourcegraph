@@ -1,3 +1,5 @@
+import { describe } from 'vitest';
+
 import { startCase } from 'lodash'
 
 import { type DOMFunctionsTest, testDOMFunctions } from '../shared/codeHostTestUtils'

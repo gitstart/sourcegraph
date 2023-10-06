@@ -1,3 +1,5 @@
+import { describe, test, expect } from 'vitest';
+
 import { render } from '@testing-library/react'
 
 import { fuzzyMatches, HighlightedMatches, type Span } from './HighlightedMatches'

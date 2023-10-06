@@ -1,3 +1,5 @@
+import { describe, beforeEach, afterEach, it } from 'vitest';
+
 import assert from 'assert'
 
 import delay from 'delay'
@@ -72,7 +74,7 @@ describe('Code insight edit insight page', () => {
     })
 
     after(() => driver?.close())
-    afterEach(() => testContext?.dispose())
+    afterEach(() => { testContext?.dispose() })
     afterEachSaveScreenshotIfFailed(() => driver.page)
 
     it.skip('should run a proper GQL mutation if search based insight has been updated', async () => {

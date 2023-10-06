@@ -1,3 +1,5 @@
+import { describe, beforeEach, test, expect } from 'vitest';
+
 import { render, type RenderResult } from '@testing-library/react'
 
 import { NOOP_TELEMETRY_SERVICE } from '@sourcegraph/shared/src/telemetry/telemetryService'

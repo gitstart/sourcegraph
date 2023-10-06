@@ -1,3 +1,5 @@
+import { describe, beforeEach, afterEach, test, expect } from 'vitest';
+
 import { noop } from 'lodash'
 
 import { MockedTestProvider } from '@sourcegraph/shared/src/testing/apollo'

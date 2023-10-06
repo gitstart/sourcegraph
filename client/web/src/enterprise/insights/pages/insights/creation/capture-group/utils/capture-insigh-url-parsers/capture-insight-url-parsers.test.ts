@@ -1,3 +1,5 @@
+import { describe, test, expect } from 'vitest';
+
 import { encodeCaptureInsightURL, decodeCaptureInsightURL } from './capture-insight-url-parsers'
 
 describe('decodeCaptureInsightURL', () => {

@@ -1,3 +1,5 @@
+import { vi, describe, test, expect } from 'vitest';
+
 import * as H from 'history'
 import { noop } from 'rxjs'
 
@@ -8,7 +10,7 @@ import { ExternalServiceKind } from '../../graphql-operations'
 
 import { ExternalServiceForm } from './ExternalServiceForm'
 
-jest.mock('../../settings/DynamicallyImportedMonacoSettingsEditor', () => ({
+vi.mock('../../settings/DynamicallyImportedMonacoSettingsEditor', () => ({
     DynamicallyImportedMonacoSettingsEditor: () => 'DynamicallyImportedMonacoSettingsEditor',
 }))
 

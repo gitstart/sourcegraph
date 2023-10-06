@@ -1,3 +1,5 @@
+import { describe, it } from 'vitest';
+
 import expect from 'expect'
 import { isEqual } from 'lodash'
 

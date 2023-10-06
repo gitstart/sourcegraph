@@ -1,3 +1,5 @@
+import { describe, beforeEach, afterEach, it } from 'vitest';
+
 import assert from 'assert'
 
 import type { ExtensionContext } from '@sourcegraph/shared/src/codeintel/legacy-extensions/api'

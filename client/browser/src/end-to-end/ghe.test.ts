@@ -1,3 +1,5 @@
+import { describe } from 'vitest';
+
 import { ExternalServiceKind } from '@sourcegraph/shared/src/graphql-operations'
 import { getConfig } from '@sourcegraph/shared/src/testing/config'
 import { createDriverForTest, type Driver } from '@sourcegraph/shared/src/testing/driver'

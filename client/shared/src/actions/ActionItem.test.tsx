@@ -1,3 +1,5 @@
+import { vi, describe, test, expect, it } from 'vitest';
+
 import { render, screen, waitFor } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import * as H from 'history'
@@ -11,7 +13,9 @@ import { createBarrier } from '../testing/testHelpers'
 
 import { ActionItem } from './ActionItem'
 
-jest.mock('mdi-react/OpenInNewIcon', () => 'OpenInNewIcon')
+vi.mock('mdi-react/OpenInNewIcon', () => ({ 
+              default: 'OpenInNewIcon' 
+            }))
 
 describe('ActionItem', () => {
     const NOOP_EXTENSIONS_CONTROLLER = { executeCommand: () => Promise.resolve(undefined) }

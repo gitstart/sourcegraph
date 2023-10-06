@@ -1,3 +1,5 @@
+import { vi, describe, test, expect } from 'vitest';
+
 import { screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 
@@ -5,9 +7,13 @@ import { renderWithBrandedContext } from '@sourcegraph/wildcard/src/testing'
 
 import { UserProductSubscriptionStatus } from './UserProductSubscriptionStatus'
 
-jest.mock('mdi-react/KeyIcon', () => 'KeyIcon')
-jest.mock('mdi-react/InformationIcon', () => 'InformationIcon')
-jest.mock('../../../components/CopyableText', () => ({ CopyableText: 'CopyableText' }))
+vi.mock('mdi-react/KeyIcon', () => ({ 
+              default: 'KeyIcon' 
+            }))
+vi.mock('mdi-react/InformationIcon', () => ({ 
+              default: 'InformationIcon' 
+            }))
+vi.mock('../../../components/CopyableText', () => ({ CopyableText: 'CopyableText' }))
 
 describe('UserProductSubscriptionStatus', () => {
     test('toggle', () => {

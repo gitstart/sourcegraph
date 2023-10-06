@@ -1,3 +1,5 @@
+import { describe, it } from 'vitest';
+
 import assert from 'assert'
 
 import { TestScheduler } from 'rxjs/testing'

@@ -1,3 +1,5 @@
+import { expect, describe, test } from 'vitest';
+
 import { escapeSpaces, validateFilter } from './filters'
 import { type Literal, createLiteral } from './token'
 

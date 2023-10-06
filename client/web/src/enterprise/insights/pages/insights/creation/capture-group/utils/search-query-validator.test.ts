@@ -1,3 +1,5 @@
+import { describe, it, expect } from 'vitest';
+
 import { searchQueryValidator } from './search-query-validator'
 
 const GOOD_QUERY = 'patterntype:regexp required_version = \\"(.*)\\"  lang:Terraform archived:no fork:no'

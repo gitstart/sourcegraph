@@ -1,3 +1,5 @@
+import { describe, test, expect } from 'vitest';
+
 import { isErrorLike } from '../errors'
 
 import { modify, parseJSONCOrError } from './jsonc'

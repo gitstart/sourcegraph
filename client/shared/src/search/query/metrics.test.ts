@@ -1,3 +1,5 @@
+import { expect, describe, test } from 'vitest';
+
 import { collectMetrics } from './metrics'
 
 expect.addSnapshotSerializer({

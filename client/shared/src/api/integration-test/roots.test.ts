@@ -1,3 +1,5 @@
+import { describe, test, expect } from 'vitest';
+
 import type { WorkspaceRoot } from '../../codeintel/legacy-extensions/api'
 import { collectSubscribableValues, integrationTestContext } from '../../testing/testHelpers'
 

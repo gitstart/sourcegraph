@@ -1,3 +1,5 @@
+import { describe, test, expect } from 'vitest';
+
 import { createRectangle, getIntersection } from './rectangle'
 
 describe('rectangle should calculate intersection', () => {

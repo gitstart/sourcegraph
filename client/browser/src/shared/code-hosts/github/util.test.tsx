@@ -1,3 +1,5 @@
+import { describe, test, expect } from 'vitest';
+
 import { startCase } from 'lodash'
 
 import { getFixtureBody } from '../shared/codeHostTestUtils'

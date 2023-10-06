@@ -1,3 +1,5 @@
+import { describe, it, expect } from 'vitest';
+
 import { FilterType } from '../query/filters'
 
 import { createQueryExampleFromString, updateQueryWithFilterAndExample } from './queryExample'

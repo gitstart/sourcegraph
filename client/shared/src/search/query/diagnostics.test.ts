@@ -1,3 +1,5 @@
+import { expect, describe, test } from 'vitest';
+
 import { SearchPatternType } from '../../graphql-operations'
 
 import { getDiagnostics } from './diagnostics'

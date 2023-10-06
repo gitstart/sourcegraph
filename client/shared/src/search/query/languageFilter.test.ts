@@ -1,3 +1,5 @@
+import { describe, test, expect } from 'vitest';
+
 import { languageCompletion, POPULAR_LANGUAGES, ALL_LANGUAGES } from './languageFilter'
 import { type Literal, createLiteral } from './token'
 

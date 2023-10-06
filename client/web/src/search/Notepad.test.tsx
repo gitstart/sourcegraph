@@ -1,3 +1,5 @@
+import { describe, afterEach, it, expect, beforeEach, vi } from 'vitest';
+
 import { act, cleanup, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { of } from 'rxjs'
@@ -129,8 +131,7 @@ describe('Notepad', () => {
         })
 
         it('creates notebooks', () => {
-            const createNotebookSpy = jest
-                .spyOn(backend, 'createNotebook')
+            const createNotebookSpy = vi.spyOn(backend, 'createNotebook')
                 .mockImplementation(() => of({} as unknown as NotebookFields))
 
             renderNotepad()

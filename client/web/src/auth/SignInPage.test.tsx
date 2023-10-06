@@ -1,3 +1,5 @@
+import { describe, it, expect } from 'vitest';
+
 import { within } from '@testing-library/dom'
 import { Route, Routes } from 'react-router-dom'
 

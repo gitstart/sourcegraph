@@ -1,3 +1,5 @@
+import { afterEach, afterAll } from 'vitest';
+
 // Taken from https://github.com/pmndrs/zustand/wiki/Testing
 
 import type { Act } from '@testing-library/react-hooks'

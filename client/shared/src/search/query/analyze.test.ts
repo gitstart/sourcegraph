@@ -1,3 +1,5 @@
+import { describe, it, expect } from 'vitest';
+
 import { getRelevantTokens } from './analyze'
 import { type Node, parseSearchQuery } from './parser'
 import { stringHuman } from './printer'

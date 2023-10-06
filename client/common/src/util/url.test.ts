@@ -1,3 +1,5 @@
+import { expect, describe, it, test } from 'vitest';
+
 import { lprToSelectionsZeroIndexed, encodeURIPathComponent, appendLineRangeQueryParameter } from './url'
 
 /**

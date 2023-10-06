@@ -1,3 +1,5 @@
+import { describe, test, expect } from 'vitest';
+
 import { renderWithBrandedContext } from '@sourcegraph/wildcard/src/testing'
 
 import { ExternalServiceKind } from '../../graphql-operations'

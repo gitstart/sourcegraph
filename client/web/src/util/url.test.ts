@@ -1,3 +1,5 @@
+import { expect, describe, test } from 'vitest';
+
 import type { RepoFile } from '@sourcegraph/shared/src/util/url'
 
 import { parseBrowserRepoURL, toTreeURL } from './url'

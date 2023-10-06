@@ -1,3 +1,5 @@
+import { describe, test, expect } from 'vitest';
+
 import type { Position } from '@sourcegraph/extension-api-types'
 
 import type { DocumentSelector, TextDocument } from '../../../codeintel/legacy-extensions/api'

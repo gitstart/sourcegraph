@@ -1,3 +1,5 @@
+import { describe, beforeEach, afterEach, it } from 'vitest';
+
 import assert from 'assert'
 
 import delay from 'delay'
@@ -29,7 +31,7 @@ describe('Code insights single insight page', () => {
     })
 
     after(() => driver?.close())
-    afterEach(() => testContext?.dispose())
+    afterEach(() => { testContext?.dispose() })
     afterEachSaveScreenshotIfFailed(() => driver.page)
 
     async function takeChartSnapshot(name: string): Promise<void> {

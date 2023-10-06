@@ -1,3 +1,5 @@
+import { describe, afterEach, it, expect } from 'vitest';
+
 import { cleanup, within, fireEvent } from '@testing-library/react'
 
 import type { RevisionsProps } from '@sourcegraph/branded'

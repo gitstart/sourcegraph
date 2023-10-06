@@ -1,3 +1,5 @@
+import { describe, it, expect } from 'vitest';
+
 import { SeriesType, type SeriesWithData } from './data-series-processing'
 import { getMinMaxBoundaries } from './get-min-max-boundary'
 

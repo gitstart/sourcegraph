@@ -1,3 +1,5 @@
+import { describe, it, expect } from 'vitest';
+
 import { formatDuration } from './get-interval-description-text'
 
 describe('formatDuration should work properly ', () => {

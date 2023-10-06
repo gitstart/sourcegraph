@@ -1,3 +1,5 @@
+import { describe, test, expect } from 'vitest';
+
 import { createRectangle } from '../../../models/geometry/rectangle'
 
 import { getConstrainedElement } from './get-constrained-element'

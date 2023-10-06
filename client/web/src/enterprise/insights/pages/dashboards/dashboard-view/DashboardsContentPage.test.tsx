@@ -1,3 +1,5 @@
+import { vi, beforeEach, describe, it, expect } from 'vitest';
+
 import React from 'react'
 
 import { useApolloClient } from '@apollo/client'
@@ -35,7 +37,7 @@ type UserEvent = typeof userEvent
 
 const mockCopyURL = sinon.spy()
 
-jest.mock('../../../hooks/use-copy-url-handler', () => ({
+vi.mock('../../../hooks/use-copy-url-handler', () => ({
     useCopyURLHandler: () => [mockCopyURL],
 }))
 
@@ -192,7 +194,7 @@ const triggerDashboardMenuItem = async (
 }
 
 beforeEach(() => {
-    jest.clearAllMocks()
+    vi.clearAllMocks()
     window.IntersectionObserver = MockIntersectionObserver
 })
 

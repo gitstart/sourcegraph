@@ -1,3 +1,5 @@
+import { describe, it, expect } from 'vitest';
+
 import { getPreviousMonday, redactSensitiveInfoFromAppURL } from './util'
 
 describe('tracking/util', () => {

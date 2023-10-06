@@ -1,3 +1,5 @@
+import { describe, test, expect } from 'vitest';
+
 import type { MockedResponse } from '@apollo/client/testing'
 import { render, waitFor, screen } from '@testing-library/react'
 import { BrowserRouter } from 'react-router-dom'

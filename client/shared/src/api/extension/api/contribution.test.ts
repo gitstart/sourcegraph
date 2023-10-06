@@ -1,3 +1,5 @@
+import { describe, test, expect, it } from 'vitest';
+
 import { ContributableMenu, type Contributions, type Evaluated } from '@sourcegraph/client-api'
 import { type Context, parse, parseTemplate } from '@sourcegraph/template-parser'
 

@@ -1,3 +1,5 @@
+import { describe, beforeEach, afterEach, it } from 'vitest';
+
 import assert from 'assert'
 
 import type { ElementHandle, MouseButton } from 'puppeteer'
@@ -35,7 +37,7 @@ describe('CodeMirror blob view', () => {
         })
     })
     afterEachSaveScreenshotIfFailed(() => driver.page)
-    afterEach(() => testContext?.dispose())
+    afterEach(() => { testContext?.dispose() })
 
     const repoName = 'github.com/sourcegraph/jsonrpc2'
     const { graphqlResults: blobGraphqlResults, filePaths } = createBlobPageData({

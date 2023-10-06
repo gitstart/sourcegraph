@@ -1,3 +1,5 @@
+import { describe, beforeEach, afterEach, it } from 'vitest';
+
 /* eslint-disable etc/no-deprecated */
 import * as assert from 'assert'
 

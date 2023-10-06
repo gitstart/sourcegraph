@@ -1,3 +1,5 @@
+import { describe, it, expect } from 'vitest';
+
 import { getTracingURL, TRACING_URL_SUFFIX } from '../getTracingUrl'
 
 const BASE_URL = 'https://sourcegraph.test:3443'

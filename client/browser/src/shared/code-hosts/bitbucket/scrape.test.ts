@@ -1,3 +1,5 @@
+import { describe, afterEach, it, expect } from 'vitest';
+
 import { readFile } from 'mz/fs'
 
 import { getFixtureBody } from '../shared/codeHostTestUtils'

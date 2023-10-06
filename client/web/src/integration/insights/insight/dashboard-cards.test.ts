@@ -1,3 +1,5 @@
+import { describe, beforeEach, afterEach, it } from 'vitest';
+
 import assert from 'assert'
 
 import { createDriverForTest, type Driver } from '@sourcegraph/shared/src/testing/driver'
@@ -33,7 +35,7 @@ describe('Code insights [Dashboard card]', () => {
     })
 
     after(() => driver?.close())
-    afterEach(() => testContext?.dispose())
+    afterEach(() => { testContext?.dispose() })
     afterEachSaveScreenshotIfFailed(() => driver.page)
 
     it('renders lang stats insight card with proper options context', async () => {

@@ -1,3 +1,5 @@
+import { expect, describe, test } from 'vitest';
+
 import { parseSearchQuery, type Node, type ParseSuccess } from './parser'
 
 expect.addSnapshotSerializer({

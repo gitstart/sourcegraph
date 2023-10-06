@@ -1,3 +1,5 @@
+import { describe, test, expect } from 'vitest';
+
 import { validateQueryForExhaustiveSearch } from './exhaustive-search-validation'
 
 describe('exhaustive search validation', () => {

@@ -1,3 +1,5 @@
+import { describe, test, expect } from 'vitest';
+
 import type { Context } from '../types'
 
 import { parse, parseTemplate } from './evaluator'

@@ -1,3 +1,5 @@
+import { describe, beforeEach, afterEach, it } from 'vitest';
+
 import assert from 'assert'
 
 import delay from 'delay'
@@ -30,7 +32,7 @@ describe('Backend insight drill down filters', () => {
     })
 
     after(() => driver?.close())
-    afterEach(() => testContext?.dispose())
+    afterEach(() => { testContext?.dispose() })
     afterEachSaveScreenshotIfFailed(() => driver.page)
 
     it('should update the insight configuration if drill-down filters have been persisted', async () => {

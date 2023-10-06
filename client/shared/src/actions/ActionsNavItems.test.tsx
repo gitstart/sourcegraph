@@ -1,3 +1,5 @@
+import { vi, describe, test, expect } from 'vitest';
+
 import { render, act, type RenderResult } from '@testing-library/react'
 import * as H from 'history'
 import { of, NEVER } from 'rxjs'
@@ -11,7 +13,9 @@ import { extensionsController } from '../testing/searchTestHelpers'
 
 import { ActionsNavItems } from './ActionsNavItems'
 
-jest.mock('mdi-react/OpenInNewIcon', () => 'OpenInNewIcon')
+vi.mock('mdi-react/OpenInNewIcon', () => ({ 
+              default: 'OpenInNewIcon' 
+            }))
 
 describe('ActionItem', () => {
     const NOOP_PLATFORM_CONTEXT = { settings: NEVER }

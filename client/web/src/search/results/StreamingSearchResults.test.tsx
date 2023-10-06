@@ -1,3 +1,5 @@
+import { describe, beforeEach, it, expect, vi } from 'vitest';
+
 import React from 'react'
 
 import { cleanup, fireEvent, render, screen } from '@testing-library/react'
@@ -229,7 +231,7 @@ describe('StreamingSearchResults', () => {
     })
 
     it('should start a new search with added params when onSearchAgain event is triggered', async () => {
-        const submitSearchMock = jest.spyOn(helpers, 'submitSearch').mockImplementation(() => {})
+        const submitSearchMock = vi.spyOn(helpers, 'submitSearch').mockImplementation(() => {})
         const tests = [
             {
                 parsedSearchQuery: 'r:golang/oauth2 test f:travis',
